@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>TERU LUCE｜ドナルド推しのディズニー好き</title>
+  <meta name="description" content="ドナルド推しのディズニー好き、TERU LUCEの自己紹介ページ。パークの背景を読み解くBGS Chroniclesと、雑学メディアDisney Discoveryを運営しています。DM・ミート歓迎。">
+  <meta name="author" content="TERU_LUCE_">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://teruluce.github.io/aboutme/">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="profile">
+  <meta property="og:url" content="https://teruluce.github.io/aboutme/">
+  <meta property="og:title" content="TERU LUCE｜ドナルド推しのディズニー好き">
+  <meta property="og:description" content="ドナルド推しのディズニー好きの自己紹介と、運営しているディズニーサイトのご案内。">
+  <meta property="og:image" content="https://teruluce.github.io/aboutme/teru-profile-card.jpg">
+  <meta property="og:image:alt" content="ステージ衣装のドナルドダック">
+  <meta property="og:site_name" content="TERU LUCE">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="TERU LUCE｜ドナルド推しのディズニー好き">
+  <meta name="twitter:description" content="ドナルド推しのディズニー好きの自己紹介と、運営しているディズニーサイトのご案内。">
+  <meta name="twitter:image" content="https://teruluce.github.io/aboutme/teru-profile-card.jpg">
+  <meta name="twitter:image:alt" content="ステージ衣装のドナルドダック">
+  <meta name="theme-color" content="#f5edd8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Special+Elite&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f5edd8;
+      --ink: #1c1209;
+      --ink-soft: #3d2d1a;
+      --bordeaux: #6b1e2a;
+      --muted: #6e5a42;
+      --border: rgba(60, 40, 15, .22);
+      --border-strong: rgba(60, 40, 15, .45);
+      --ease: cubic-bezier(.16, 1, .3, 1);
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { background: var(--paper); -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: "Noto Serif JP", serif;
+      font-weight: 400;
+      line-height: 1.9;
+      letter-spacing: .02em;
+      -webkit-font-smoothing: antialiased;
+      background:
+        radial-gradient(ellipse at 15% 0%, rgba(255, 245, 215, .7), transparent 45%),
+        repeating-linear-gradient(0deg, transparent 0 29px, rgba(88, 65, 34, .03) 29px 30px),
+        var(--paper);
+      min-height: 100vh;
+    }
+    a { color: inherit; }
+    img { -webkit-user-drag: none; -webkit-touch-callout: none; }
+    :focus-visible { outline: 2px solid var(--bordeaux); outline-offset: 3px; }
+
+    .wrap {
+      width: 100%;
+      max-width: 480px;
+      margin: 0 auto;
+      padding: 22px 18px calc(36px + env(safe-area-inset-bottom));
+    }
+
+    /* ---------- プロフィールヘッダー ---------- */
+    .hero {
+      text-align: center;
+      border-top: 4px double var(--ink);
+      border-bottom: 1px solid var(--border-strong);
+      padding: 26px 0 24px;
+    }
+    .avatar {
+      position: relative;
+      width: 132px;
+      height: 132px;
+      margin: 0 auto 18px;
+      border-radius: 50%;
+      overflow: hidden;
+      background: #1a1f6b;
+      border: 1px solid var(--border-strong);
+      box-shadow: 0 0 0 4px var(--paper), 0 0 0 5px var(--border-strong), 0 10px 26px rgba(40, 20, 5, .22);
+    }
+    .avatar img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1.4);
+      transform-origin: 85% 15%;
+    }
+    .eyebrow {
+      font: 12px/1.6 "Special Elite", monospace;
+      letter-spacing: .2em;
+      color: var(--bordeaux);
+      margin: 0 0 6px;
+    }
+    h1 {
+      margin: 0;
+      font: 700 2.25rem/1.15 "Playfair Display", serif;
+      letter-spacing: .02em;
+    }
+    .tagline {
+      margin: 10px 0 0;
+      font-size: .95rem;
+      font-weight: 500;
+      color: var(--ink-soft);
+    }
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      margin: 18px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+    .chips li {
+      padding: 3px 13px;
+      border: 1px solid var(--border-strong);
+      background: rgba(255, 252, 245, .5);
+      font-size: .8rem;
+      line-height: 1.8;
+      color: var(--ink-soft);
+    }
+
+    /* ---------- セクション共通 ---------- */
+    .section { margin-top: 38px; }
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin: 0 0 18px;
+      font: italic 700 1.2rem/1.3 "Playfair Display", serif;
+      justify-content: center;
+    }
+    .section-title::before, .section-title::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--border-strong);
+    }
+    .section-title small {
+      font: 400 .8rem "Noto Serif JP", serif;
+      font-style: normal;
+      color: var(--muted);
+      margin-left: 6px;
+      letter-spacing: .06em;
+    }
+
+    /* ---------- 自己紹介 ---------- */
+    .about p {
+      margin: 0 0 1.1em;
+      font-size: 1rem;
+      line-height: 2;
+      letter-spacing: .01em;
+    }
+    .about p:last-child { margin-bottom: 0; }
+
+    /* ---------- サイト（about me の行スタイル） ---------- */
+    .row-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      border-top: 1px solid var(--border-strong);
+      border-bottom: 1px solid var(--border-strong);
+      background: rgba(255, 252, 245, .3);
+    }
+    .row-list li + li { border-top: 1px solid var(--border); }
+    .row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      column-gap: 12px;
+      min-height: 76px;
+      padding: 16px 12px;
+      text-decoration: none;
+      -webkit-tap-highlight-color: rgba(107, 30, 42, .12);
+      transition: background .2s;
+    }
+    .row:active, .row:hover { background: rgba(107, 30, 42, .06); }
+    .row-label {
+      font: 12px/1.6 "Special Elite", monospace;
+      letter-spacing: .14em;
+      color: var(--bordeaux);
+    }
+    .row-title {
+      font: 700 1.2rem/1.4 "Playfair Display", serif;
+      margin: 2px 0 4px;
+    }
+    .row-desc {
+      font-size: .875rem;
+      line-height: 1.75;
+      color: var(--ink-soft);
+    }
+    .row-arrow {
+      font-size: 1.3rem;
+      color: var(--bordeaux);
+      line-height: 1;
+    }
+
+    /* ---------- メッセージ ---------- */
+    .message {
+      padding: 20px 18px;
+      border: 1px solid var(--border-strong);
+      background: rgba(255, 252, 245, .45);
+      box-shadow: inset 0 0 0 3px var(--paper), inset 0 0 0 4px var(--border);
+      text-align: center;
+    }
+    .message .eyebrow { margin-bottom: 8px; }
+    .message p { margin: 0; font-size: 1rem; line-height: 2; }
+    .message p + p { margin-top: .4em; }
+
+    /* ---------- SNS ---------- */
+    .sns { display: flex; flex-direction: column; gap: 12px; }
+    .sns-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 54px;
+      padding: 12px 16px;
+      border: 1px solid var(--bordeaux);
+      background: var(--bordeaux);
+      color: var(--paper);
+      text-decoration: none;
+      font: 500 .95rem/1.4 "Noto Serif JP", serif;
+      letter-spacing: .06em;
+      -webkit-tap-highlight-color: transparent;
+      transition: transform .2s var(--ease), background .2s;
+    }
+    .sns-btn:active { transform: scale(.985); background: #501b24; }
+    .sns-btn.alt { background: transparent; color: var(--bordeaux); }
+    .sns-btn.alt:active { background: rgba(107, 30, 42, .08); }
+    .sns-btn span:first-child { font: 12px "Special Elite", monospace; letter-spacing: .12em; opacity: .85; }
+    .sns-divider {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 8px 0 0;
+    }
+    .sns-divider::before, .sns-divider::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+    .sns-divider em {
+      font: normal 12px/1.6 "Special Elite", monospace;
+      letter-spacing: .14em;
+      color: var(--muted);
+    }
+
+    /* ---------- フッター ---------- */
+    footer {
+      margin-top: 40px;
+      padding-top: 18px;
+      border-top: 3px double var(--border-strong);
+      text-align: center;
+      font: 12px/1.8 "Special Elite", monospace;
+      letter-spacing: .1em;
+      color: var(--muted);
+    }
+
+    /* ---------- 表示アニメ ---------- */
+    @media (prefers-reduced-motion: no-preference) {
+      .hero, .section {
+        animation: rise .7s var(--ease) both;
+      }
+      .section:nth-of-type(1) { animation-delay: .08s; }
+      .section:nth-of-type(2) { animation-delay: .16s; }
+      .section:nth-of-type(3) { animation-delay: .24s; }
+      .section:nth-of-type(4) { animation-delay: .32s; }
+      @keyframes rise {
+        from { opacity: 0; transform: translateY(14px); }
+        to { opacity: 1; transform: none; }
+      }
+    }
+
+    /* 小さい画面 */
+    @media (max-width: 360px) {
+      .wrap { padding-left: 14px; padding-right: 14px; }
+      h1 { font-size: 2rem; }
+    }
+    /* 大きい画面でも中央のカラムとして見せる */
+    @media (min-width: 641px) {
+      .wrap { padding-top: 48px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+
+    <header class="hero">
+      <div class="avatar">
+        <img src="teru-profile.jpg" alt="ステージ衣装を着たドナルドダック" width="132" height="132" decoding="async" fetchpriority="high">
+      </div>
+      <p class="eyebrow">ABOUT ME</p>
+      <h1>TERU LUCE</h1>
+      <p class="tagline">ドナルド推しのディズニー好き</p>
+      <ul class="chips" aria-label="好きなもの">
+        <li>ドナルド</li>
+        <li>ダンサー</li>
+        <li>舞浜</li>
+        <li>関東在住</li>
+      </ul>
+    </header>
+
+    <section class="section about" aria-label="自己紹介">
+      <h2 class="section-title">Hello<small>自己紹介</small></h2>
+      <p>小さい頃から親にパークへ連れて行ってもらい、気づけばディズニーが大好きになっていました。</p>
+      <p>推しはドナルドです。ちょっとおバカなところが大好きで、キャラクターは基本みんな好きです。最近はダンサーさんにも夢中になり始めました。</p>
+      <p>関東住みなので、たまに舞浜へ行っています。今は受験期であまり行けていませんが、また行ける日を楽しみにしています。</p>
+    </section>
+
+    <section class="section" aria-label="運営しているサイト">
+      <h2 class="section-title">My Sites<small>やっていること</small></h2>
+      <ul class="row-list">
+        <li>
+          <a class="row" href="https://teruluce.github.io/disney-bgs/">
+            <div>
+              <div class="row-label">SITE 01 / ARCHIVE</div>
+              <div class="row-title">BGS Chronicles</div>
+              <div class="row-desc">パークの背景設定や建築、小道具に込められた物語を読み解くアーカイブ</div>
+            </div>
+            <span class="row-arrow" aria-hidden="true">↗</span>
+          </a>
+        </li>
+        <li>
+          <a class="row" href="https://teruluce.github.io/disney-discovery/">
+            <div>
+              <div class="row-label">SITE 02 / DISCOVERY</div>
+              <div class="row-title">Disney Discovery</div>
+              <div class="row-desc">映画やキャラクター、パークの話題を気軽に読める雑学メディア</div>
+            </div>
+            <span class="row-arrow" aria-hidden="true">↗</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <section class="section" aria-label="メッセージ">
+      <div class="message">
+        <p class="eyebrow">DM &amp; MEET WELCOME</p>
+        <p>2007年生まれの19歳です。</p>
+        <p>浪人中ですが、気にせずDMをいただけたら嬉しいです！</p>
+        <p>ミートも大歓迎です。</p>
+      </div>
+    </section>
+
+    <section class="section" aria-label="SNS">
+      <h2 class="section-title">Find Me<small>SNS</small></h2>
+      <div class="sns">
+        <a class="sns-btn" href="https://www.instagram.com/teru_luce_/" target="_blank" rel="noopener noreferrer"><span>INSTAGRAM</span><span>@teru_luce_</span></a>
+        <a class="sns-btn alt" href="https://x.com/teru_luce" target="_blank" rel="noopener noreferrer"><span>X</span><span>@teru_luce</span></a>
+
+        <div class="sns-divider" role="separator"><em>OTHER ACCOUNTS</em></div>
+
+        <a class="sns-btn alt" href="https://www.instagram.com/teru_diario_/" target="_blank" rel="noopener noreferrer"><span>INSTAGRAM / DIARIO</span><span>@teru_diario_</span></a>
+        <a class="sns-btn alt" href="https://x.com/BGSChronicles" target="_blank" rel="noopener noreferrer"><span>X / BGS CHRONICLES</span><span>@BGSChronicles</span></a>
+      </div>
+    </section>
+
+    <footer>
+      <span>&copy; TERU_LUCE_</span>
+    </footer>
+
+  </main>
+</body>
+</html>

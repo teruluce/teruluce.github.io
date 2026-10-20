@@ -22,66 +22,107 @@
   <meta name="twitter:description" content="ドナルド推しのディズニー好きの自己紹介と、運営しているディズニーサイトのご案内。">
   <meta name="twitter:image" content="https://teruluce.github.io/aboutme/teru-profile-card.jpg">
   <meta name="twitter:image:alt" content="ステージ衣装のドナルドダック">
-  <meta name="theme-color" content="#f5edd8">
+  <meta name="theme-color" content="#161b5c">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Special+Elite&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      color-scheme: light;
-      --paper: #f5edd8;
-      --ink: #1c1209;
-      --ink-soft: #3d2d1a;
-      --bordeaux: #6b1e2a;
-      --muted: #6e5a42;
-      --border: rgba(60, 40, 15, .22);
-      --border-strong: rgba(60, 40, 15, .45);
+      color-scheme: dark;
+      --sky-1: #161b5c;
+      --sky-2: #27237c;
+      --sky-3: #46308f;
+      --text: #f7f5ff;
+      --muted: #d2cef3;
+      --card: rgba(255, 255, 255, .09);
+      --card-line: rgba(255, 255, 255, .22);
+      --orange: #ffa62b;
+      --pink: #ff7a8a;
+      --navy-ink: #1a1450;
       --ease: cubic-bezier(.16, 1, .3, 1);
+      --font: "Zen Maru Gothic", "Hiragino Maru Gothic ProN", "Hiragino Sans", "Yu Gothic", "Meiryo", sans-serif;
+      --font-en: "Poppins", "Zen Maru Gothic", "Hiragino Sans", sans-serif;
     }
     *, *::before, *::after { box-sizing: border-box; }
-    html { background: var(--paper); -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+    html {
+      background: var(--sky-2);
+      -webkit-text-size-adjust: 100%;
+      text-size-adjust: 100%;
+    }
     body {
       margin: 0;
-      color: var(--ink);
-      font-family: "Noto Serif JP", serif;
-      font-weight: 400;
+      min-height: 100vh;
+      color: var(--text);
+      font-family: var(--font);
+      font-weight: 500;
       line-height: 1.9;
       letter-spacing: .02em;
+      line-break: strict;
+      word-break: normal;
+      overflow-wrap: break-word;
       -webkit-font-smoothing: antialiased;
+      background: linear-gradient(180deg, var(--sky-1) 0%, var(--sky-2) 50%, var(--sky-3) 100%);
+    }
+    /* 夜空の星（画面に固定） */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
       background:
-        radial-gradient(ellipse at 15% 0%, rgba(255, 245, 215, .7), transparent 45%),
-        repeating-linear-gradient(0deg, transparent 0 29px, rgba(88, 65, 34, .03) 29px 30px),
-        var(--paper);
-      min-height: 100vh;
+        radial-gradient(1.6px 1.6px at 8% 6%, #fff, transparent 70%),
+        radial-gradient(1.2px 1.2px at 22% 14%, rgba(255,255,255,.85), transparent 70%),
+        radial-gradient(2px 2px at 41% 5%, #ffe9b8, transparent 70%),
+        radial-gradient(1.2px 1.2px at 63% 11%, rgba(255,255,255,.8), transparent 70%),
+        radial-gradient(1.8px 1.8px at 84% 7%, #fff, transparent 70%),
+        radial-gradient(1.2px 1.2px at 93% 19%, rgba(255,255,255,.7), transparent 70%),
+        radial-gradient(1.4px 1.4px at 14% 33%, rgba(255,255,255,.7), transparent 70%),
+        radial-gradient(1.6px 1.6px at 76% 38%, #ffe9b8, transparent 70%),
+        radial-gradient(1.2px 1.2px at 5% 57%, rgba(255,255,255,.6), transparent 70%),
+        radial-gradient(1.4px 1.4px at 90% 63%, rgba(255,255,255,.7), transparent 70%),
+        radial-gradient(1.2px 1.2px at 30% 82%, rgba(255,255,255,.6), transparent 70%),
+        radial-gradient(1.6px 1.6px at 70% 91%, #fff, transparent 70%);
     }
     a { color: inherit; }
     img { -webkit-user-drag: none; -webkit-touch-callout: none; }
-    :focus-visible { outline: 2px solid var(--bordeaux); outline-offset: 3px; }
+    :focus-visible { outline: 3px solid var(--orange); outline-offset: 3px; }
+
+    /* 言葉のまとまりごとに折り返す（途中で切れないようにする） */
+    .ph { display: inline-block; }
+    /* 1文ずつ改行し、行の長さを揃えて「1行に1〜2文字だけ残る」を防ぐ */
+    .s { display: block; text-wrap: balance; }
+    .s + .s { margin-top: .35em; }
+    .message p { text-wrap: balance; }
+    .tagline { text-wrap: balance; }
 
     .wrap {
+      position: relative;
+      z-index: 1;
       width: 100%;
       max-width: 480px;
       margin: 0 auto;
-      padding: 22px 18px calc(36px + env(safe-area-inset-bottom));
+      padding: 30px 18px calc(40px + env(safe-area-inset-bottom));
     }
 
-    /* ---------- プロフィールヘッダー ---------- */
-    .hero {
-      text-align: center;
-      border-top: 4px double var(--ink);
-      border-bottom: 1px solid var(--border-strong);
-      padding: 26px 0 24px;
+    /* ---------- ヘッダー ---------- */
+    .hero { text-align: center; }
+    .avatar-ring {
+      width: 140px;
+      height: 140px;
+      margin: 0 auto 18px;
+      padding: 4px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #ffc15a, var(--pink) 55%, #b98cff);
+      box-shadow: 0 10px 30px rgba(8, 6, 40, .45);
     }
     .avatar {
-      position: relative;
-      width: 132px;
-      height: 132px;
-      margin: 0 auto 18px;
+      width: 100%;
+      height: 100%;
       border-radius: 50%;
       overflow: hidden;
       background: #1a1f6b;
-      border: 1px solid var(--border-strong);
-      box-shadow: 0 0 0 4px var(--paper), 0 0 0 5px var(--border-strong), 0 10px 26px rgba(40, 20, 5, .22);
+      border: 3px solid var(--sky-2);
     }
     .avatar img {
       display: block;
@@ -91,175 +132,177 @@
       transform: scale(1.4);
       transform-origin: 85% 15%;
     }
-    .eyebrow {
-      font: 12px/1.6 "Special Elite", monospace;
-      letter-spacing: .2em;
-      color: var(--bordeaux);
-      margin: 0 0 6px;
-    }
     h1 {
       margin: 0;
-      font: 700 2.25rem/1.15 "Playfair Display", serif;
-      letter-spacing: .02em;
+      font: 700 2.2rem/1.2 var(--font-en);
+      letter-spacing: .05em;
     }
     .tagline {
-      margin: 10px 0 0;
-      font-size: .95rem;
-      font-weight: 500;
-      color: var(--ink-soft);
+      margin: 8px 0 0;
+      font-size: 1.05rem;
+      font-weight: 700;
+      line-height: 1.7;
     }
     .chips {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 8px;
-      margin: 18px 0 0;
+      margin: 16px 0 0;
       padding: 0;
       list-style: none;
     }
     .chips li {
-      padding: 3px 13px;
-      border: 1px solid var(--border-strong);
-      background: rgba(255, 252, 245, .5);
-      font-size: .8rem;
-      line-height: 1.8;
-      color: var(--ink-soft);
+      padding: 2px 14px;
+      border: 1px solid var(--card-line);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .12);
+      font-size: .85rem;
+      line-height: 1.9;
+      white-space: nowrap;
     }
 
     /* ---------- セクション共通 ---------- */
-    .section { margin-top: 38px; }
+    .section { margin-top: 34px; }
     .section-title {
       display: flex;
-      align-items: center;
-      gap: 14px;
-      margin: 0 0 18px;
-      font: italic 700 1.2rem/1.3 "Playfair Display", serif;
-      justify-content: center;
+      align-items: baseline;
+      gap: 8px;
+      margin: 0 0 12px 2px;
+      font: 700 1.1rem/1.4 var(--font-en);
+      letter-spacing: .04em;
     }
-    .section-title::before, .section-title::after {
-      content: "";
-      flex: 1;
-      height: 1px;
-      background: var(--border-strong);
+    .section-title::before {
+      content: "✦";
+      color: var(--orange);
+      font-size: .9em;
     }
     .section-title small {
-      font: 400 .8rem "Noto Serif JP", serif;
-      font-style: normal;
+      font: 500 .8rem var(--font);
       color: var(--muted);
-      margin-left: 6px;
       letter-spacing: .06em;
+    }
+    .card {
+      border: 1px solid var(--card-line);
+      border-radius: 20px;
+      background: var(--card);
+      padding: 18px 18px;
     }
 
     /* ---------- 自己紹介 ---------- */
-    .about p {
-      margin: 0 0 1.1em;
+    .about-card p {
+      margin: 0 0 1em;
       font-size: 1rem;
-      line-height: 2;
-      letter-spacing: .01em;
+      line-height: 1.95;
+      text-align: left;
     }
-    .about p:last-child { margin-bottom: 0; }
+    .about-card p:last-child { margin-bottom: 0; }
 
-    /* ---------- サイト（about me の行スタイル） ---------- */
-    .row-list {
-      margin: 0;
-      padding: 0;
-      list-style: none;
-      border-top: 1px solid var(--border-strong);
-      border-bottom: 1px solid var(--border-strong);
-      background: rgba(255, 252, 245, .3);
-    }
-    .row-list li + li { border-top: 1px solid var(--border); }
-    .row {
+    /* ---------- サイト ---------- */
+    .sites { display: grid; gap: 12px; margin: 0; padding: 0; list-style: none; }
+    .site {
       display: grid;
-      grid-template-columns: 1fr auto;
+      grid-template-columns: 44px 1fr auto;
       align-items: center;
-      column-gap: 12px;
+      gap: 12px;
       min-height: 76px;
-      padding: 16px 12px;
+      padding: 14px 14px;
+      border: 1px solid var(--card-line);
+      border-radius: 20px;
+      background: var(--card);
       text-decoration: none;
-      -webkit-tap-highlight-color: rgba(107, 30, 42, .12);
-      transition: background .2s;
+      -webkit-tap-highlight-color: rgba(255, 166, 43, .18);
+      transition: transform .2s var(--ease), background .2s;
     }
-    .row:active, .row:hover { background: rgba(107, 30, 42, .06); }
-    .row-label {
-      font: 12px/1.6 "Special Elite", monospace;
-      letter-spacing: .14em;
-      color: var(--bordeaux);
-    }
-    .row-title {
-      font: 700 1.2rem/1.4 "Playfair Display", serif;
-      margin: 2px 0 4px;
-    }
-    .row-desc {
-      font-size: .875rem;
-      line-height: 1.75;
-      color: var(--ink-soft);
-    }
-    .row-arrow {
-      font-size: 1.3rem;
-      color: var(--bordeaux);
+    .site:active { transform: scale(.985); background: rgba(255, 255, 255, .15); }
+    .site-icon {
+      display: grid;
+      place-items: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, .14);
+      font-size: 1.35rem;
       line-height: 1;
     }
+    .site-title {
+      display: block;
+      font: 700 1.05rem/1.4 var(--font-en);
+      letter-spacing: .02em;
+    }
+    .site-desc {
+      display: block;
+      margin-top: 2px;
+      font-size: .875rem;
+      line-height: 1.7;
+      color: var(--muted);
+    }
+    .site-arrow { color: var(--orange); font-size: 1.2rem; line-height: 1; }
 
     /* ---------- メッセージ ---------- */
     .message {
-      padding: 20px 18px;
-      border: 1px solid var(--border-strong);
-      background: rgba(255, 252, 245, .45);
-      box-shadow: inset 0 0 0 3px var(--paper), inset 0 0 0 4px var(--border);
+      border-color: rgba(255, 166, 43, .55);
+      background: linear-gradient(135deg, rgba(255, 166, 43, .2), rgba(255, 122, 138, .14));
       text-align: center;
+      padding: 20px 16px;
     }
-    .message .eyebrow { margin-bottom: 8px; }
-    .message p { margin: 0; font-size: 1rem; line-height: 2; }
-    .message p + p { margin-top: .4em; }
+    .msg-title {
+      margin: 0 0 6px;
+      font: 700 1.05rem/1.5 var(--font-en);
+      letter-spacing: .04em;
+      color: #ffd08a;
+    }
+    .message p { margin: 0; font-size: 1rem; line-height: 1.95; }
+    .message .msg-title + p { margin-top: 0; }
 
     /* ---------- SNS ---------- */
     .sns { display: flex; flex-direction: column; gap: 12px; }
     .sns-btn {
       display: flex;
       align-items: center;
-      justify-content: center;
-      gap: 10px;
-      min-height: 54px;
-      padding: 12px 16px;
-      border: 1px solid var(--bordeaux);
-      background: var(--bordeaux);
-      color: var(--paper);
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 2px 12px;
+      min-height: 56px;
+      padding: 10px 20px;
+      border: 1px solid var(--card-line);
+      border-radius: 18px;
+      background: var(--card);
+      color: var(--text);
       text-decoration: none;
-      font: 500 .95rem/1.4 "Noto Serif JP", serif;
-      letter-spacing: .06em;
       -webkit-tap-highlight-color: transparent;
       transition: transform .2s var(--ease), background .2s;
     }
-    .sns-btn:active { transform: scale(.985); background: #501b24; }
-    .sns-btn.alt { background: transparent; color: var(--bordeaux); }
-    .sns-btn.alt:active { background: rgba(107, 30, 42, .08); }
-    .sns-btn span:first-child { font: 12px "Special Elite", monospace; letter-spacing: .12em; opacity: .85; }
-    .sns-divider {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin: 8px 0 0;
+    .sns-btn:active { transform: scale(.985); background: rgba(255, 255, 255, .16); }
+    .sns-label { font: 700 .95rem/1.5 var(--font-en); letter-spacing: .02em; }
+    .sns-handle { font-size: .875rem; color: var(--muted); letter-spacing: .02em; }
+    .sns-btn.primary {
+      border-color: transparent;
+      background: linear-gradient(135deg, #ffb53d, var(--pink));
+      color: var(--navy-ink);
+      box-shadow: 0 8px 20px rgba(255, 122, 138, .28);
     }
-    .sns-divider::before, .sns-divider::after {
-      content: "";
-      flex: 1;
-      height: 1px;
-      background: var(--border);
+    .sns-btn.primary:active { background: linear-gradient(135deg, #f0a52e, #ee6c7d); }
+    .sns-btn.primary .sns-handle { color: var(--navy-ink); opacity: .85; }
+    .sns-btn.white {
+      border-color: transparent;
+      background: #fff;
+      color: var(--navy-ink);
     }
-    .sns-divider em {
-      font: normal 12px/1.6 "Special Elite", monospace;
-      letter-spacing: .14em;
+    .sns-btn.white:active { background: #ece9ff; }
+    .sns-btn.white .sns-handle { color: #4b4682; }
+    .sns-sub {
+      margin: 10px 0 -2px 4px;
+      font: 700 .8rem/1.6 var(--font-en);
+      letter-spacing: .1em;
       color: var(--muted);
     }
 
     /* ---------- フッター ---------- */
     footer {
-      margin-top: 40px;
-      padding-top: 18px;
-      border-top: 3px double var(--border-strong);
+      margin-top: 38px;
       text-align: center;
-      font: 12px/1.8 "Special Elite", monospace;
+      font: 600 .75rem/1.8 var(--font-en);
       letter-spacing: .1em;
       color: var(--muted);
     }
@@ -279,14 +322,16 @@
       }
     }
 
-    /* 小さい画面 */
     @media (max-width: 360px) {
       .wrap { padding-left: 14px; padding-right: 14px; }
       h1 { font-size: 2rem; }
+      .card { padding: 16px 14px; }
+      .site { gap: 10px; padding: 12px; }
+      .chips { gap: 6px; }
+      .chips li { padding: 2px 10px; font-size: .8rem; }
     }
-    /* 大きい画面でも中央のカラムとして見せる */
     @media (min-width: 641px) {
-      .wrap { padding-top: 48px; }
+      .wrap { padding-top: 56px; }
     }
   </style>
 </head>
@@ -294,72 +339,81 @@
   <main class="wrap">
 
     <header class="hero">
-      <div class="avatar">
-        <img src="teru-profile.jpg" alt="ステージ衣装を着たドナルドダック" width="132" height="132" decoding="async" fetchpriority="high">
+      <div class="avatar-ring">
+        <div class="avatar">
+          <img src="teru-profile.jpg" alt="ステージ衣装を着たドナルドダック" width="132" height="132" decoding="async" fetchpriority="high">
+        </div>
       </div>
-      <p class="eyebrow">ABOUT ME</p>
       <h1>TERU LUCE</h1>
-      <p class="tagline">ドナルド推しのディズニー好き</p>
+      <p class="tagline"><span class="ph">ドナルド推しの</span><span class="ph">ディズニー好き🦆</span></p>
       <ul class="chips" aria-label="好きなもの">
-        <li>ドナルド</li>
-        <li>ダンサー</li>
-        <li>舞浜</li>
-        <li>関東在住</li>
+        <li>🦆 ドナルド</li>
+        <li>💃 ダンサー</li>
+        <li>🏰 舞浜</li>
       </ul>
     </header>
 
-    <section class="section about" aria-label="自己紹介">
-      <h2 class="section-title">Hello<small>自己紹介</small></h2>
-      <p>小さい頃から親にパークへ連れて行ってもらい、気づけばディズニーが大好きになっていました。</p>
-      <p>推しはドナルドです。ちょっとおバカなところが大好きで、キャラクターは基本みんな好きです。最近はダンサーさんにも夢中になり始めました。</p>
-      <p>関東住みなので、たまに舞浜へ行っています。今は受験期であまり行けていませんが、また行ける日を楽しみにしています。</p>
+    <section class="section" aria-label="自己紹介">
+      <h2 class="section-title">About me<small>自己紹介</small></h2>
+      <div class="card about-card">
+        <p><span class="ph">小さい頃から</span><span class="ph">親にパークへ</span><span class="ph">連れて行ってもらい、</span><span class="ph">気づけば</span><span class="ph">ディズニーが</span><span class="ph">大好きに</span><span class="ph">なっていました。</span></p>
+        <p>
+          <span class="s"><span class="ph">推しは</span><span class="ph">ドナルドです。</span></span>
+          <span class="s"><span class="ph">ちょっとおバカな</span><span class="ph">ところが</span><span class="ph">大好きで、</span><span class="ph">キャラクターは</span><span class="ph">基本みんな</span><span class="ph">好きです。</span></span>
+          <span class="s"><span class="ph">最近は</span><span class="ph">ダンサーさんにも</span><span class="ph">夢中になり</span><span class="ph">始めました。</span></span>
+        </p>
+        <p>
+          <span class="s"><span class="ph">関東住みなので、</span><span class="ph">たまに</span><span class="ph">舞浜へ</span><span class="ph">行っています。</span></span>
+          <span class="s"><span class="ph">今は</span><span class="ph">受験期で</span><span class="ph">あまり</span><span class="ph">行けていませんが、</span><span class="ph">また行ける日を</span><span class="ph">楽しみにしています。</span></span>
+        </p>
+      </div>
     </section>
 
     <section class="section" aria-label="運営しているサイト">
       <h2 class="section-title">My Sites<small>やっていること</small></h2>
-      <ul class="row-list">
+      <ul class="sites">
         <li>
-          <a class="row" href="https://teruluce.github.io/disney-bgs/">
-            <div>
-              <div class="row-label">SITE 01 / ARCHIVE</div>
-              <div class="row-title">BGS Chronicles</div>
-              <div class="row-desc">パークの背景設定や建築、小道具に込められた物語を読み解くアーカイブ</div>
-            </div>
-            <span class="row-arrow" aria-hidden="true">↗</span>
+          <a class="site" href="https://teruluce.github.io/disney-bgs/">
+            <span class="site-icon" aria-hidden="true">📖</span>
+            <span>
+              <span class="site-title">BGS Chronicles</span>
+              <span class="site-desc"><span class="ph">パークの背景ストーリーを</span><span class="ph">読み解く資料集</span></span>
+            </span>
+            <span class="site-arrow" aria-hidden="true">↗</span>
           </a>
         </li>
         <li>
-          <a class="row" href="https://teruluce.github.io/disney-discovery/">
-            <div>
-              <div class="row-label">SITE 02 / DISCOVERY</div>
-              <div class="row-title">Disney Discovery</div>
-              <div class="row-desc">映画やキャラクター、パークの話題を気軽に読める雑学メディア</div>
-            </div>
-            <span class="row-arrow" aria-hidden="true">↗</span>
+          <a class="site" href="https://teruluce.github.io/disney-discovery/">
+            <span class="site-icon" aria-hidden="true">✨</span>
+            <span>
+              <span class="site-title">Disney Discovery</span>
+              <span class="site-desc"><span class="ph">映画やキャラクター、</span><span class="ph">パークの話題を</span><span class="ph">気軽に読める</span><span class="ph">雑学メディア</span></span>
+            </span>
+            <span class="site-arrow" aria-hidden="true">↗</span>
           </a>
         </li>
       </ul>
     </section>
 
     <section class="section" aria-label="メッセージ">
-      <div class="message">
-        <p class="eyebrow">DM &amp; MEET WELCOME</p>
-        <p>2007年生まれの19歳です。</p>
-        <p>浪人中ですが、気にせずDMをいただけたら嬉しいです！</p>
-        <p>ミートも大歓迎です。</p>
+      <div class="card message">
+        <p class="msg-title">DM welcome 💌</p>
+        <p><span class="ph">2007年生まれの</span><span class="ph">19歳です。</span></p>
+        <p><span class="ph">浪人中ですが、</span><span class="ph">気にせず</span><span class="ph">DMを</span><span class="ph">いただけたら</span><span class="ph">嬉しいです！</span></p>
+        <p><span class="ph">ミートも</span><span class="ph">大歓迎です。</span></p>
       </div>
     </section>
 
     <section class="section" aria-label="SNS">
-      <h2 class="section-title">Find Me<small>SNS</small></h2>
+      <h2 class="section-title">Find me<small>SNS</small></h2>
       <div class="sns">
-        <a class="sns-btn" href="https://www.instagram.com/teru_luce_/" target="_blank" rel="noopener noreferrer"><span>INSTAGRAM</span><span>@teru_luce_</span></a>
-        <a class="sns-btn alt" href="https://x.com/teru_luce" target="_blank" rel="noopener noreferrer"><span>X</span><span>@teru_luce</span></a>
+        <a class="sns-btn primary" href="https://www.instagram.com/teru_luce_/" target="_blank" rel="noopener noreferrer"><span class="sns-label">Instagram</span><span class="sns-handle">@teru_luce_</span></a>
+        <a class="sns-btn white" href="https://x.com/teru_luce" target="_blank" rel="noopener noreferrer"><span class="sns-label">X</span><span class="sns-handle">@teru_luce</span></a>
 
-        <div class="sns-divider" role="separator"><em>OTHER ACCOUNTS</em></div>
+        <p class="sns-sub">OTHER ACCOUNTS</p>
 
-        <a class="sns-btn alt" href="https://www.instagram.com/teru_diario_/" target="_blank" rel="noopener noreferrer"><span>INSTAGRAM / DIARIO</span><span>@teru_diario_</span></a>
-        <a class="sns-btn alt" href="https://x.com/BGSChronicles" target="_blank" rel="noopener noreferrer"><span>X / BGS CHRONICLES</span><span>@BGSChronicles</span></a>
+        <a class="sns-btn" href="https://www.instagram.com/teru_diario_/" target="_blank" rel="noopener noreferrer"><span class="sns-label">Instagram / Diario</span><span class="sns-handle">@teru_diario_</span></a>
+        <a class="sns-btn" href="https://x.com/BGSChronicles" target="_blank" rel="noopener noreferrer"><span class="sns-label">X / BGS Chronicles</span><span class="sns-handle">@BGSChronicles</span></a>
       </div>
     </section>
 

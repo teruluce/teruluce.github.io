@@ -22,7 +22,7 @@
   <meta name="twitter:description" content="ドナルド推しのディズニー好きの自己紹介と、運営しているディズニーサイトのご案内。">
   <meta name="twitter:image" content="https://teruluce.github.io/aboutme/teru-profile-card.jpg">
   <meta name="twitter:image:alt" content="ステージ衣装のドナルドダック">
-  <meta name="theme-color" content="#f3ede4">
+  <meta name="theme-color" content="#7a5736">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
@@ -39,12 +39,14 @@
       --font-en: "Jost", "Noto Sans JP", sans-serif;
     }
     *, *::before, *::after { box-sizing: border-box; }
-    html { background: var(--bg); -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+    html { background: #7a5736; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
     body {
       margin: 0;
       min-height: 100vh;
+      padding: 28px 20px calc(40px + env(safe-area-inset-bottom));
       color: var(--body);
-      background: var(--bg);
+      background: #7a5736 url("wood.jpg") repeat;
+      background-size: 560px auto;
       font-family: var(--font);
       font-weight: 400;
       line-height: 2;
@@ -61,11 +63,15 @@
     /* 言葉のまとまりごとに折り返す（途中で切れないようにする） */
     .ph { display: inline-block; }
 
+    /* 木のテーブルの上に置いた、ベージュのカード */
     .wrap {
       width: 100%;
       max-width: 440px;
       margin: 0 auto;
-      padding: 28px 28px calc(56px + env(safe-area-inset-bottom));
+      padding: 26px 24px 44px;
+      background: var(--bg);
+      border-radius: 10px;
+      box-shadow: 0 30px 60px -26px rgba(25, 12, 4, .65), 0 2px 6px rgba(25, 12, 4, .25);
     }
 
     /* ---------- ヘッダー ---------- */
@@ -150,12 +156,14 @@
       .link:hover { padding-left: 6px; padding-right: 6px; background: var(--tap); }
     }
     @media (max-width: 360px) {
-      .wrap { padding-left: 20px; padding-right: 20px; }
+      body { padding-left: 14px; padding-right: 14px; }
+      .wrap { padding-left: 18px; padding-right: 18px; }
       h1 { font-size: 1.55rem; letter-spacing: .18em; }
       .link { gap: 12px; }
     }
     @media (min-width: 641px) {
-      .wrap { padding-top: 56px; }
+      body { padding-top: 48px; padding-bottom: 48px; }
+      .wrap { padding: 36px 32px 52px; }
     }
   </style>
 </head>

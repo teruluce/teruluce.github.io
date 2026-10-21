@@ -22,31 +22,30 @@
   <meta name="twitter:description" content="ドナルド推しのディズニー好きの自己紹介と、運営しているディズニーサイトのご案内。">
   <meta name="twitter:image" content="https://teruluce.github.io/aboutme/teru-profile-card.jpg">
   <meta name="twitter:image:alt" content="ステージ衣装のドナルドダック">
-  <meta name="theme-color" content="#7a5736">
+  <meta name="theme-color" content="#e9e6df">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
     :root {
       color-scheme: light;
-      --bg: #f3ede4;
-      --text: #3a322b;
-      --body: #5a4f45;
-      --muted: #7d7165;
-      --line: rgba(58, 50, 43, .17);
-      --tap: rgba(58, 50, 43, .05);
+      --bg: #fbfaf7;
+      --text: #343b36;
+      --body: #505650;
+      --muted: #7b817a;
+      --line: rgba(52, 59, 54, .14);
+      --tap: rgba(52, 59, 54, .045);
       --font: "Jost", "Noto Sans JP", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
       --font-en: "Jost", "Noto Sans JP", sans-serif;
     }
     *, *::before, *::after { box-sizing: border-box; }
-    html { background: #7a5736; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+    html { background: #e9e6df; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
     body {
       margin: 0;
       min-height: 100vh;
       padding: 28px 20px calc(40px + env(safe-area-inset-bottom));
       color: var(--body);
-      background: #7a5736 url("wood.jpg") repeat;
-      background-size: 560px auto;
+      background: #e9e6df;
       font-family: var(--font);
       font-weight: 400;
       line-height: 2;
@@ -63,15 +62,16 @@
     /* 言葉のまとまりごとに折り返す（途中で切れないようにする） */
     .ph { display: inline-block; }
 
-    /* 木のテーブルの上に置いた、ベージュのカード */
+    /* 落ち着いたカフェを思わせる、明るいニュートラルカラー */
     .wrap {
       width: 100%;
       max-width: 440px;
       margin: 0 auto;
       padding: 26px 24px 44px;
       background: var(--bg);
-      border-radius: 10px;
-      box-shadow: 0 30px 60px -26px rgba(25, 12, 4, .65), 0 2px 6px rgba(25, 12, 4, .25);
+      border: 1px solid rgba(74, 82, 73, .08);
+      border-radius: 14px;
+      box-shadow: 0 18px 48px -30px rgba(43, 49, 43, .28), 0 2px 8px rgba(43, 49, 43, .04);
     }
 
     /* ---------- ヘッダー ---------- */
@@ -79,15 +79,15 @@
       aspect-ratio: 1 / 1;
       overflow: hidden;
       border-radius: 6px;
-      background: #d9cfc1;
-      box-shadow: 0 20px 36px -22px rgba(70, 48, 24, .5);
+      background: #e5e3dc;
+      box-shadow: 0 12px 28px -22px rgba(43, 49, 43, .28);
     }
     .hero-photo img {
       display: block;
       width: 100%;
       height: 100%;
       object-fit: cover;
-      filter: saturate(.88) sepia(.1);
+      filter: saturate(.94);
     }
     .hero-text { margin-top: 28px; }
     h1 {

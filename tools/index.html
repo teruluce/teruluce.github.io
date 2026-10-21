@@ -6,7 +6,7 @@
   <meta name="referrer" content="no-referrer">
   <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; connect-src 'none'; img-src 'none'; font-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
   <meta name="robots" content="index,follow">
-  <meta name="theme-color" content="#f7f5ef">
+  <meta name="theme-color" content="#F3F9FE">
   <meta name="description" content="日々のちょっとした作業に使える、シンプルなWebツールをまとめています。">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Tools Personal">
@@ -21,32 +21,32 @@
   <title>Tools Personal｜シンプルなWebツール集</title>
   <style>
     :root {
-      --bg: #f7f5ef; --paper: #fffefa; --ink: #333b33; --muted: #73796f;
-      --green: #879982; --green-dark: #526b54; --line: #e5e4da;
-      --soft: #e8ede3; --radius: 22px;
+      --bg: #F3F9FE; --paper: #FFFFFF; --ink: #20364A; --muted: #53697B;
+      --green: #8ECDF5; --green-dark: #2878B5; --line: #D8E7F2;
+      --soft: #EAF6FF; --radius: 22px;
     }
     * { box-sizing: border-box; }
     body {
       margin: 0; min-height: 100vh; padding: 36px 18px; color: var(--ink);
-      background: radial-gradient(circle at 8% 8%, #e4e9dc 0, #e4e9dc 95px, transparent 96px),
-                  radial-gradient(circle at 94% 80%, #eee8dc 0, #eee8dc 125px, transparent 126px), var(--bg);
+      background: radial-gradient(circle at 8% 8%, #DDF1FF 0, #DDF1FF 95px, transparent 96px),
+                  radial-gradient(circle at 94% 80%, #E7F5FF 0, #E7F5FF 125px, transparent 126px), var(--bg);
       font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
       line-height: 1.7;
     }
     a { color: inherit; text-decoration: none; }
-    a:focus-visible { outline: 3px solid rgba(82,107,84,.45); outline-offset: 3px; }
+    a:focus-visible { outline: 3px solid rgba(40,120,181,.35); outline-offset: 3px; }
     .page { width: 100%; max-width: 680px; margin: 0 auto; }
     .topline { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 30px; color: var(--muted); font-size: 12px; letter-spacing: .12em; }
     .dot { display: inline-block; width: 8px; height: 8px; margin-right: 8px; border-radius: 50%; background: var(--green); }
-    header { position: relative; overflow: hidden; padding: 34px 30px 38px; border: 1px solid rgba(120,135,112,.15); border-radius: 28px; background: rgba(255,254,250,.78); }
+    header { position: relative; overflow: hidden; padding: 34px 30px 38px; border: 1px solid rgba(40,120,181,.16); border-radius: 28px; background: rgba(255,254,250,.78); }
     .eyebrow { margin: 0 0 8px; color: var(--green-dark); font-size: 12px; letter-spacing: .15em; text-transform: uppercase; }
     h1 { position: relative; z-index: 1; margin: 0; font-family: Georgia, "Times New Roman", serif; font-size: clamp(34px,7vw,48px); font-weight: 400; letter-spacing: -.04em; line-height: 1.15; }
     .intro { position: relative; z-index: 1; max-width: 420px; margin: 18px 0 0; color: var(--muted); font-size: 14px; }
-    .decoration { position: absolute; top: -35px; right: -25px; width: 180px; height: 180px; border: 1px solid rgba(135,153,130,.45); border-radius: 50%; }
-    .decoration::before, .decoration::after { position: absolute; content: ""; border: 1px solid rgba(135,153,130,.35); border-radius: 50%; }
+    .decoration { position: absolute; top: -35px; right: -25px; width: 180px; height: 180px; border: 1px solid rgba(142,205,245,.65); border-radius: 50%; }
+    .decoration::before, .decoration::after { position: absolute; content: ""; border: 1px solid rgba(142,205,245,.45); border-radius: 50%; }
     .decoration::before { inset: 22px; }
-    .decoration::after { inset: 44px; background: rgba(232,237,227,.5); }
-    main { margin-top: 20px; padding: 28px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--paper); box-shadow: 0 12px 35px rgba(56,62,48,.04); }
+    .decoration::after { inset: 44px; background: rgba(234,246,255,.75); }
+    main { margin-top: 20px; padding: 28px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--paper); box-shadow: 0 12px 35px rgba(32,54,74,.06); }
     .section-title { margin: 0 0 6px; font-family: Georgia, "Times New Roman", serif; font-size: 24px; font-weight: 400; }
     .section-description { margin: 0 0 22px; color: var(--muted); font-size: 13px; }
     .tools { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }
@@ -58,7 +58,7 @@
     .name { display: block; font-family: Georgia, "Times New Roman", serif; font-size: 20px; line-height: 1.3; }
     .note { display: block; margin-top: 2px; color: var(--muted); font-size: 12px; }
     .arrow { flex: none; color: var(--green-dark); font-size: 16px; }
-    footer { padding: 25px 8px 0; color: var(--muted); font-size: 11px; text-align: center; }
+     .notice { margin-top: 18px; padding: 20px 24px; border: 1px solid var(--line); border-radius: var(--radius); background: #F1F8FD; color: var(--muted); font-size: 12px; } .notice h2 { margin: 0 0 8px; color: var(--ink); font-size: 16px; } .notice ul { margin: 0; padding-left: 1.25em; } .notice li { margin: 5px 0; } .notice-small { margin: 10px 0 0; } .developer { margin-top: 8px; } .developer a { color: var(--green-dark); text-underline-offset: 2px; } footer { padding: 25px 8px 0; color: var(--muted); font-size: 11px; text-align: center; }
     @media (max-width: 480px) {
       body { padding: 22px 13px; }
       header { padding: 28px 22px 30px; }
@@ -101,7 +101,7 @@
         </li>
       </ul>
     </main>
-    <footer>Tools Personal · A simple collection of useful tools</footer>
+    <footer><section class="notice" aria-labelledby="notice-title"><h2 id="notice-title">ご利用にあたって</h2><ul><li>各ツールは個人制作です。使いやすさの向上に努めていますが、正確性・完全性・継続的な動作を保証するものではありません。</li><li>重要な判断や業務に使う場合は、結果を必ずご自身で確認してください。</li><li>パスワード、認証コード、個人情報など、機密性の高い情報は入力しないでください。</li><li>ツールごとの注意事項も確認のうえ、ご自身の判断と責任でご利用ください。</li></ul><p class="notice-small">本サイトは各サービスの公式サイトではなく、独立した個人制作のツール集です。</p></section><footer>Tools Personal · 個人制作のWebツール集<div class="developer">開発者：<a href="https://github.com/teruluce" rel="noopener noreferrer">teruluce</a> · <a href="https://github.com/teruluce/teruluce.github.io/tree/main/tools" rel="noopener noreferrer">ソースコード</a></div></footer>
   </div>
 </body>
 </html>

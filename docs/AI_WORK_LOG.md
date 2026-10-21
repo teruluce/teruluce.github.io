@@ -17,3 +17,20 @@
 - **検証結果:** GitHub上の `aboutme/index.html` の更新内容を確認。実ブラウザでのPC／スマートフォン表示、公開ページへの反映、画像の実表示はこの作業記録作成時点では未確認。
 - **Claudeとの連携:** この変更をClaudeが確認・レビューしたかは未確認。共通ログへの記録を追加したが、Claude側への自動通知・自動同期を保証するものではない。
 - **次の作業:** 公開ページの表示を確認。必要に応じてClaudeに本ログとPR差分を確認してもらい、レビュー結果を追記する。
+
+## 2026-10-21 — ChatGPT：Tools Personalのデザインを統一
+
+- **作業AI:** ChatGPT
+- **対象サイト:** Tools Personal（ツール一覧・Duckmail・ルーレット）
+- **リポジトリ:** https://github.com/teruluce/teruluce.github.io
+- **対象ファイル:** `tools/index.html`、`tools/duckmail/index.html`、`tools/roulette/index.html`、`tools/favicon.svg`
+- **依頼:** 3ページのデザインを統一する。
+- **変更内容:** 淡い水色・白・ネイビーを基調に共通の配色、見出し、余白、カード、ボタン、入力欄、注意書き、フッターのスタイルを追加。ファビコンを水色系に変更し、ルーレットにも設定。DuckmailのOGPサイト名をTools Personalに統一。一覧ページの入れ子になっていたfooter構造を修正。ツールのJavaScript機能、本文説明、canonical URL、サイトマップURLは意図的に変更していない。
+- **変更理由:** ページごとの見た目の違いを減らし、統一感と安心感のあるツールサイトにするため。
+- **ブランチ:** `design/unify-tools-personal`
+- **PR:** https://github.com/teruluce/teruluce.github.io/pull/6
+- **状態:** PR作成済み・未マージ。公開サイトへの反映は未確認。
+- **検証結果:** GitHub上の変更後ファイルを再取得し、3ページすべてに共通デザインCSSがあること、CSS閉じタグ、ルーレットのファビコン設定、一覧ページのfooter構造を確認。実ブラウザのPC／スマートフォン表示、実機での操作、公開環境への反映は未確認。
+- **Claudeとの連携:** Claudeによるレビューは未実施・未確認。PR #6の差分をレビュー対象にできる。
+- **次の作業:** PR #6の差分を確認し、問題がなければマージ。マージ後に公開ページをPC／スマートフォンで確認し、必要なら見た目を微調整する。
+

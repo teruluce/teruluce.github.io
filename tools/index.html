@@ -67,6 +67,140 @@
       .topline { font-size: 10px; }
     }
     @media (prefers-reduced-motion: reduce) { .tool { transition: none; } }
+  
+    /* Tools Personal 共通デザイン */
+    :root {
+      color-scheme: light;
+      --bg: #F3F9FE;
+      --paper: #FFFFFF;
+      --surface: #FFFFFF;
+      --ink: #20364A;
+      --muted: #53697B;
+      --accent: #2878B5;
+      --accent-hover: #1E6092;
+      --green: #8ECDF5;
+      --green-dark: #2878B5;
+      --line: #D8E7F2;
+      --soft: #EAF6FF;
+      --focus: #8ECDF5;
+      --radius: 22px;
+    }
+    body {
+      background:
+        radial-gradient(circle at 8% 8%, #DDF1FF 0, #DDF1FF 95px, transparent 96px),
+        radial-gradient(circle at 94% 80%, #E7F5FF 0, #E7F5FF 125px, transparent 126px),
+        var(--bg);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+      line-height: 1.7;
+    }
+    .page, .shell { width: 100%; max-width: 680px; margin-left: auto; margin-right: auto; }
+    .topline, .masthead {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px 14px;
+      margin: 0 0 20px;
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: .06em;
+      text-transform: none;
+    }
+    .masthead a, .topline a { color: var(--accent); text-underline-offset: 3px; }
+    .dot, .masthead::before { background: var(--accent); }
+    header {
+      padding: clamp(24px, 5vw, 34px);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.94);
+      box-shadow: 0 10px 28px rgba(32,54,74,.045);
+    }
+    .eyebrow { color: var(--accent); font-weight: 700; letter-spacing: .1em; }
+    h1 {
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+      font-size: clamp(1.8rem, 6vw, 2.55rem);
+      font-weight: 750;
+      letter-spacing: -.035em;
+      line-height: 1.25;
+    }
+    .intro { max-width: 52rem; color: var(--muted); font-size: .95rem; }
+    main, .guide {
+      margin-top: 16px;
+      padding: clamp(20px, 5vw, 28px);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--paper);
+      box-shadow: 0 10px 28px rgba(32,54,74,.045);
+    }
+    h2, .section-title, .guide h2 { color: var(--ink); font-family: inherit; font-weight: 700; }
+    .section-description, .guide p, .guide li { color: var(--muted); }
+    .notice, .privacy {
+      margin-top: 14px;
+      padding: 18px 20px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: #EAF6FF;
+      color: var(--muted);
+    }
+    .notice h2, .privacy strong { color: var(--ink); }
+    footer {
+      padding: 22px 8px 0;
+      color: var(--muted);
+      font-size: .78rem;
+      text-align: center;
+    }
+    .developer a, footer a { color: var(--accent); text-underline-offset: 3px; }
+    button, input, textarea, select { font: inherit; }
+    button, .button-link {
+      min-height: 46px;
+      border-radius: 12px;
+      border-color: var(--line);
+      transition: background-color .18s ease, border-color .18s ease, transform .18s ease;
+    }
+    .primary, button.primary, .button-link.primary {
+      border-color: var(--accent);
+      background: var(--accent);
+      color: #fff;
+    }
+    .primary:hover:not(:disabled), .button-link.primary:hover { background: var(--accent-hover); }
+    .secondary:hover:not(:disabled), .button-link:hover { background: var(--soft); }
+    input, textarea, select {
+      border-color: #C9DCEB;
+      border-radius: 12px;
+      color: var(--ink);
+      background: #fff;
+    }
+    input:focus-visible, textarea:focus-visible, select:focus-visible,
+    button:focus-visible, a:focus-visible {
+      outline: 3px solid rgba(40,120,181,.28);
+      outline-offset: 3px;
+    }
+    .result, .group-result, .group-summary {
+      border-color: #C9E4F8;
+      border-radius: 16px;
+      background: var(--soft);
+    }
+    .result-label { color: var(--accent); }
+    .tool { border-radius: 14px; }
+    .tool:hover { background: var(--soft); }
+    .badge {
+      border-color: #C9DCEB;
+      background: var(--soft);
+      color: var(--accent);
+    }
+    .arrow, .developer a { color: var(--accent); }
+    @media (max-width: 480px) {
+      body { padding: 22px 13px; }
+      .topline, .masthead { margin-bottom: 16px; }
+      header { padding: 24px 20px; }
+      main, .guide { padding: 20px 17px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+    }
+
   </style>
 </head>
 <body>
@@ -101,7 +235,7 @@
         </li>
       </ul>
     </main>
-    <footer><section class="notice" aria-labelledby="notice-title"><h2 id="notice-title">ご利用にあたって</h2><ul><li>各ツールは個人制作です。使いやすさの向上に努めていますが、正確性・完全性・継続的な動作を保証するものではありません。</li><li>重要な判断や業務に使う場合は、結果を必ずご自身で確認してください。</li><li>パスワード、認証コード、個人情報など、機密性の高い情報は入力しないでください。</li><li>ツールごとの注意事項も確認のうえ、ご自身の判断と責任でご利用ください。</li></ul><p class="notice-small">本サイトは各サービスの公式サイトではなく、独立した個人制作のツール集です。</p></section><footer>Tools Personal · 個人制作のWebツール集<div class="developer">開発者：<a href="https://github.com/teruluce" rel="noopener noreferrer">teruluce</a> · <a href="https://github.com/teruluce/teruluce.github.io/tree/main/tools" rel="noopener noreferrer">ソースコード</a></div></footer>
+    <section class="notice" aria-labelledby="notice-title"><h2 id="notice-title">ご利用にあたって</h2><ul><li>各ツールは個人制作です。使いやすさの向上に努めていますが、正確性・完全性・継続的な動作を保証するものではありません。</li><li>重要な判断や業務に使う場合は、結果を必ずご自身で確認してください。</li><li>パスワード、認証コード、個人情報など、機密性の高い情報は入力しないでください。</li><li>ツールごとの注意事項も確認のうえ、ご自身の判断と責任でご利用ください。</li></ul><p class="notice-small">本サイトは各サービスの公式サイトではなく、独立した個人制作のツール集です。</p></section><footer>Tools Personal · 個人制作のWebツール集<div class="developer">開発者：<a href="https://github.com/teruluce" rel="noopener noreferrer">teruluce</a> · <a href="https://github.com/teruluce/teruluce.github.io/tree/main/tools" rel="noopener noreferrer">ソースコード</a></div></footer>
   </div>
 </body>
 </html>

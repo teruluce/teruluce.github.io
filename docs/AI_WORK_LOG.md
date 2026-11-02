@@ -54,3 +54,11 @@
 - **変更:** `index.html` にTools Personal一覧、URLクリーナー、Duckアドレス生成、ルーレットへのカードを追加。descriptionとキーボードフォーカス表示を調整。
 - **検証:** Chromiumで375/768/1440px幅の表示、カード4件、横はみ出しなしを確認。各リンク先のHTTP 200を確認済み。
 - **公開:** 公開用PRとして反映予定。公開後の状態はGitHubのマージ・Pagesデプロイ状況を参照。
+
+## 2026-11-02 — ChatGPT：ツールを別リポジトリteru-toolsへ集約
+
+- **最終指定:** duck-address-generatorを廃止し、teru-toolsをツール専用トップ・保管先にする。てる側はDisney入口、BGS、Discovery、teru-toolsの4リポジトリ。個人用は別枠。
+- **変更:** 8ツールと個人モデルのデザイン・公開用SEOをteru-toolsへ配置。/ のツールカードを外してDisney系入口とし、旧 /tools/ 以下は固定URLの互換転送だけにする。サイトマップを新しいツールサイトへ向ける。
+- **PR #9:** 移転先のteru-tools PR #1に引き継いで閉じた。マージしない。
+- **旧リポジトリ:** duck-address-generatorは公開ファイルを削除して終了。リポジトリ自体の削除は連携にAPIがないため未実施。teru-toolsは削除しない。
+- **検証:** 新ツール9ページ×375/768/1440px、主要操作、URLクリーナー6テスト、旧URLの互換転送を確認。iPhone/iPad実機・検索インデックスは未検証。

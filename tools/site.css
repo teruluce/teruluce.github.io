@@ -1,0 +1,18 @@
+/* 個人側の生成り・グリーンを公開サイト全体で共有 */
+:root { color-scheme:light; --bg:#f7f5ef; --paper:#fffefa; --surface:#fffefa; --ink:#333b33; --muted:#626c5e; --green:#879982; --green-dark:#526b54; --accent:#526b54; --accent-hover:#405642; --line:#deded2; --soft:#e8ede3; --radius:22px; }
+body { background:radial-gradient(circle at 8% 8%,#e4e9dc 0,#e4e9dc 95px,transparent 96px),radial-gradient(circle at 94% 80%,#eee8dc 0,#eee8dc 125px,transparent 126px),var(--bg); color:var(--ink); }
+.page,.shell { width:100%; max-width:680px; margin-inline:auto; }
+header { background:var(--paper); border-color:var(--line); }
+.toolnav { display:flex; flex-wrap:wrap; gap:8px; margin:0 0 22px; }
+.toolnav a { display:inline-flex; align-items:center; min-height:40px; padding:4px 12px; border:1px solid var(--line); border-radius:999px; color:var(--muted); font-size:12px; text-decoration:none; }
+.toolnav a:hover,.toolnav a[aria-current=page] { background:var(--soft); color:var(--green-dark); }
+.guide,.notice { margin-top:18px; padding:20px; border:1px solid var(--line); border-radius:var(--radius); background:var(--paper); color:var(--muted); font-size:13px; }
+.guide h2,.notice h2 { color:var(--ink); font-size:18px; font-family:inherit; }
+.guide p,.guide li,.notice p { color:var(--muted); }
+.guide a,.notice a,footer a { color:var(--green-dark); text-decoration:underline; text-underline-offset:3px; }
+footer { font-size:12px; overflow-wrap:anywhere; }
+:focus-visible { outline:3px solid var(--green-dark); outline-offset:3px; }
+.result,.group-result { background:var(--soft); border-color:var(--line); }
+button.primary,.button-link.primary { background:var(--green-dark); border-color:var(--green-dark); }
+input,textarea,select { font-size:16px; }
+@media(prefers-reduced-motion:reduce) { *,*::before,*::after { scroll-behavior:auto!important; transition-duration:.01ms!important; } }

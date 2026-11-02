@@ -4,23 +4,23 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="referrer" content="no-referrer">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; connect-src 'none'; img-src 'self'; font-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
-  <meta name="theme-color" content="#F3F9FE">
-  <meta name="description" content="受信用として使うことの多いDuckアドレスで、自分からメールを送りたいときに。送信先と自分のDuckアドレスから宛先を簡単に作成する非公式ツールです。">
-  <meta name="robots" content="index,follow">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'none'; img-src 'self'; font-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  
+  
+  
   <meta name="application-name" content="Duckアドレス生成ツール">
-  <link rel="canonical" href="https://teruluce.github.io/tools/duckmail/">
-  <meta property="og:url" content="https://teruluce.github.io/tools/duckmail/">
-  <meta property="og:site_name" content="Tools Personal">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Duckアドレス生成ツール">
-  <meta name="twitter:description" content="受信用として使うことの多いDuckアドレスで、自分からメールを送りたいときに。送信先と自分のDuckアドレスから宛先を簡単に作成。">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Duckアドレス生成ツール">
-  <meta property="og:description" content="Duckアドレスから新しいメールを送るための宛先を、ブラウザ内で生成します。">
-  <meta property="og:locale" content="ja_JP">
-  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
-  <title>Duckアドレス送信補助ツール｜自分のDuckアドレスからメールを送る</title>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -37,16 +37,16 @@
   <style>
     :root {
       color-scheme: light;
-      --bg: #F3F9FE;
+      --bg: #f7f5ef;
       --surface: #fff;
-      --ink: #20364A;
-      --muted: #53697B;
-      --accent: #2878B5;
-      --accent-hover: #1E6092;
-      --line: #D8E7F2;
-      --soft: #EAF6FF;
+      --ink: #333b33;
+      --muted: #626c5e;
+      --accent: #526b54;
+      --accent-hover: #405642;
+      --line: #deded2;
+      --soft: #e8ede3;
       --error: #a12e2e;
-      --focus: #8ECDF5;
+      --focus: #879982;
       --radius: 18px;
     }
     * { box-sizing: border-box; }
@@ -107,7 +107,7 @@
       width: 100%;
       min-height: 50px;
       padding: 12px 14px;
-      border: 1px solid #C9DCEB;
+      border: 1px solid #deded2;
       border-radius: 11px;
       color: var(--ink);
       background: #fff;
@@ -145,7 +145,7 @@
     .result {
       margin-top: 24px;
       padding: 18px;
-      border: 1px solid #C9E4F8;
+      border: 1px solid #deded2;
       border-radius: 14px;
       background: var(--soft);
     }
@@ -163,7 +163,7 @@
     .result .primary { flex-basis: 100%; }
     .status { min-height: 1.6em; margin: 12px 0 0; color: var(--muted); font-size: .88rem; }
     .status.error { color: var(--error); }
-    .privacy { display: flex; gap: 12px; margin-top: 14px; padding: 16px; background: #F1F8FD; }
+    .privacy { display: flex; gap: 12px; margin-top: 14px; padding: 16px; background: #e8ede3; }
     .privacy-mark { flex: 0 0 auto; color: var(--accent); font-weight: 800; }
     .privacy strong { display: block; margin-bottom: 3px; }
     .privacy p { margin: 0; color: #526879; font-size: .85rem; }
@@ -189,24 +189,24 @@
     /* Tools Personal 共通デザイン */
     :root {
       color-scheme: light;
-      --bg: #F3F9FE;
-      --paper: #FFFFFF;
-      --surface: #FFFFFF;
-      --ink: #20364A;
-      --muted: #53697B;
-      --accent: #2878B5;
-      --accent-hover: #1E6092;
-      --green: #8ECDF5;
-      --green-dark: #2878B5;
-      --line: #D8E7F2;
-      --soft: #EAF6FF;
-      --focus: #8ECDF5;
+      --bg: #f7f5ef;
+      --paper: #fffefa;
+      --surface: #fffefa;
+      --ink: #333b33;
+      --muted: #626c5e;
+      --accent: #526b54;
+      --accent-hover: #405642;
+      --green: #879982;
+      --green-dark: #526b54;
+      --line: #deded2;
+      --soft: #e8ede3;
+      --focus: #879982;
       --radius: 22px;
     }
     body {
       background:
-        radial-gradient(circle at 8% 8%, #DDF1FF 0, #DDF1FF 95px, transparent 96px),
-        radial-gradient(circle at 94% 80%, #E7F5FF 0, #E7F5FF 125px, transparent 126px),
+        radial-gradient(circle at 8% 8%, #e4e9dc 0, #e4e9dc 95px, transparent 96px),
+        radial-gradient(circle at 94% 80%, #eee8dc 0, #eee8dc 125px, transparent 126px),
         var(--bg);
       color: var(--ink);
       font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
@@ -259,7 +259,7 @@
       padding: 18px 20px;
       border: 1px solid var(--line);
       border-radius: 18px;
-      background: #EAF6FF;
+      background: #e8ede3;
       color: var(--muted);
     }
     .notice h2, .privacy strong { color: var(--ink); }
@@ -285,7 +285,7 @@
     .primary:hover:not(:disabled), .button-link.primary:hover { background: var(--accent-hover); }
     .secondary:hover:not(:disabled), .button-link:hover { background: var(--soft); }
     input, textarea, select {
-      border-color: #C9DCEB;
+      border-color: #deded2;
       border-radius: 12px;
       color: var(--ink);
       background: #fff;
@@ -296,7 +296,7 @@
       outline-offset: 3px;
     }
     .result, .group-result, .group-summary {
-      border-color: #C9E4F8;
+      border-color: #deded2;
       border-radius: 16px;
       background: var(--soft);
     }
@@ -304,7 +304,7 @@
     .tool { border-radius: 14px; }
     .tool:hover { background: var(--soft); }
     .badge {
-      border-color: #C9DCEB;
+      border-color: #deded2;
       background: var(--soft);
       color: var(--accent);
     }
@@ -320,13 +320,29 @@
     }
 
   </style>
+<title>Duckアドレス生成｜Tools Personal</title>
+<meta name="description" content="自分のDuckアドレスから送るための宛先を作成。ブラウザで使える無料のWebツールです。">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#f7f5ef">
+<link rel="canonical" href="https://teruluce.github.io/tools/duckmail/">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Tools Personal / teru_luce">
+<meta property="og:title" content="Duckアドレス生成｜Tools Personal">
+<meta property="og:description" content="自分のDuckアドレスから送るための宛先を作成。ブラウザで使える無料のWebツールです。">
+<meta property="og:url" content="https://teruluce.github.io/tools/duckmail/">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Duckアドレス生成｜Tools Personal">
+<meta name="twitter:description" content="自分のDuckアドレスから送るための宛先を作成。ブラウザで使える無料のWebツールです。">
+<link rel="stylesheet" href="../site.css">
 </head>
 <body>
   <div class="shell">
     <p class="masthead"><a href="../">Tools Personal</a>　/　ブラウザ内で動作するシンプルなツール</p>
-    <header>
+    <nav class="toolnav" aria-label="ツールナビゲーション"><a href="../../">ホーム</a><a href="../">ツール一覧</a><a href="../url-cleaner/">URLクリーナー</a><a href="../duckmail/" aria-current="page">Duckアドレス生成</a><a href="../roulette/">ルーレット・グループ分け</a><a href="../split/">割り勘計算</a><a href="../timer/">学習タイマー</a><a href="../qr/">QRコード作成</a><a href="../constellation/">ことば星座</a><a href="../rally/">ラリー</a></nav><header>
       <p class="eyebrow">EMAIL ADDRESS UTILITY</p>
-      <h1>Duckアドレス生成ツール</h1>
+      <h1>Duckアドレス生成</h1>
       <p class="intro">Duckアドレスは、普段使っているメールアドレスを相手に直接知らせずにメールを受信するためによく使われます。このツールは、自分からDuckアドレスを使ってメールを送りたいときに、送信に使う宛先を簡単に作成するためのものです。</p>
     </header>
 
@@ -398,10 +414,7 @@
       </ul>
     </section>
 
-    <footer>
-      非公式の独立ツール · 入力内容は送信・保存されません
-      <div class="developer">開発者：<a href="https://github.com/teruluce/teruluce.github.io/tree/main/tools/duckmail" rel="noopener noreferrer">teruluce（個人開発）</a> · <a href="https://github.com/teruluce/teruluce.github.io/tree/main/tools/duckmail" rel="noopener noreferrer">ソースコード</a></div>
-    </footer>
+    <aside class="notice"><h2>ご利用にあたって</h2><p>本ツールは個人制作です。結果の正確性・完全性や継続的な動作を保証しません。重要な用途では結果をご確認ください。</p></aside><footer>Tools Personal · 個人制作のWebツール集<div>開発者：<a href="https://github.com/teruluce">teruluce</a> · <a href="https://github.com/teruluce/teruluce.github.io/tree/main/tools/duckmail">ソースコード</a> · <a href="../../">ホーム</a></div></footer>
   </div>
 
   <script>

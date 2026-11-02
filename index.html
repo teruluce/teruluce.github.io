@@ -1,76 +1,134 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>teru_luce｜ディズニーの背景と物語を読み解くサイト</title>
-<meta name="description" content="teru_luce が運営するディズニー系サイトの入口。東京ディズニーリゾートの背景設定を掘り下げる「BGS Chronicles」、「Disney Discovery」、便利なWebツール集「Tools Personal」へご案内します。">
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="referrer" content="no-referrer">
+<meta name="google-site-verification" content="zLBYiGLGMSOyAt6KTi6eiYIEG0wV0U4FlxwKekiUQoc">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"teru_luce","url":"https://teruluce.github.io/"}</script>
+<style>
+    :root {
+      color-scheme: light;
+      --bg: #f6f3ec;
+      --ink: #2c4536;
+      --sage: #a8b8a2;
+      --sage-soft: #e3e8dd;
+      --sand: #e7dcc5;
+      --muted: #75806f;
+      --line: #d9d6cb;
+      --serif: Georgia, "Times New Roman", serif;
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Sans", "Noto Sans JP", sans-serif;
+      line-height: 1.8;
+      -webkit-text-size-adjust: 100%;
+    }
+    a { color: inherit; text-decoration: none; }
+    a:focus-visible { outline: 2px solid var(--ink); outline-offset: 4px; }
+
+    .page {
+      min-height: 100%;
+      width: min(100% - 40px, 520px);
+      margin-inline: auto;
+      display: flex;
+      flex-direction: column;
+      padding: 24px 0 28px;
+    }
+    .mark {
+      font-family: var(--serif);
+      font-size: 15px;
+      letter-spacing: .12em;
+    }
+    .topbar { display: flex; align-items: center; justify-content: space-between; }
+    .lang { display: flex; align-items: center; gap: 4px; font-size: 12px; letter-spacing: .12em; color: var(--muted); }
+    .lang button {
+      min-width: 40px; min-height: 40px; padding: 0;
+      border: 0; background: none; font: inherit; letter-spacing: inherit;
+      color: var(--muted); cursor: pointer;
+    }
+    .lang button[aria-pressed="true"] { color: var(--ink); border-bottom: 1px solid var(--ink); }
+    .lang button:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+    main { flex: 1; padding: 32px 0 40px; }
+
+    /* 重なり合う円 */
+    .shapes {
+      position: relative;
+      width: min(46vw, 190px);
+      aspect-ratio: 1;
+      margin: 0 0 28px;
+    }
+    .shapes span { position: absolute; border-radius: 50%; mix-blend-mode: multiply; }
+    .shapes .c1 { width: 64%; aspect-ratio: 1; left: 0; top: 8%; background: var(--sage); }
+    .shapes .c2 { width: 52%; aspect-ratio: 1; right: 0; top: 0; background: var(--sand); }
+    .shapes .c3 { width: 40%; aspect-ratio: 1; left: 38%; bottom: 0; background: var(--ink); opacity: .9; }
+    .shapes .c4 {
+      width: 78%; aspect-ratio: 1; left: 10%; top: 14%;
+      border: 1px solid var(--ink); background: none; mix-blend-mode: normal; opacity: .28;
+    }
+
+    h1 {
+      margin: 0;
+      font-family: var(--serif);
+      font-weight: 500;
+      font-size: clamp(24px, 7vw, 34px);
+      line-height: 1.2;
+      letter-spacing: .04em;
+    }
+    .jp { margin: 6px 0 0; font-size: 13px; letter-spacing: .24em; color: var(--muted); }
+
+    .hello { margin: 32px 0 0; font-size: 14px; color: #3f5646; }
+    .hello p { margin: 0 0 6px; }
+
+    .connect-label {
+      margin: 40px 0 8px;
+      font-size: 12px;
+      letter-spacing: .2em;
+      color: var(--muted);
+    }
+    .links { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+    .links li { border-bottom: 1px solid var(--line); }
+    .row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      min-height: 68px;
+      padding: 10px 6px;
+      transition: background-color .2s ease;
+    }
+    .row:hover { background: var(--sage-soft); }
+    .row .name { display: block; font-size: 16px; letter-spacing: .06em; }
+    .row .note { display: block; font-size: 12px; color: var(--muted); letter-spacing: .02em; word-break: break-all; }
+    .row .arrow { flex: none; font-size: 16px; }
+
+    footer {
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+      font-size: 10px;
+      letter-spacing: .12em;
+      color: var(--muted);
+    }
+    @media (min-width: 640px) {
+      .page { padding-top: 36px; padding-bottom: 36px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .row { transition: none; }
+    }
+  h2 { font-size:14px; font-weight:500; } .intro { padding:0; } .home-tools { margin-top:32px; } .all-tools { display:inline-flex; padding:12px 0; text-decoration:underline; } </style><title>teru_luce｜便利なWebツールと制作サイト</title>
+<meta name="description" content="URLクリーナー・QRコード・割り勘・学習タイマーなどのWebツールと、teru_luceが運営するサイトをご案内します。">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#f7f5ef">
 <link rel="canonical" href="https://teruluce.github.io/">
-<meta name="robots" content="index, follow">
-<meta name="google-site-verification" content="zLBYiGLGMSOyAt6KTi6eiYIEG0wV0U4FlxwKekiUQoc" />
+<link rel="icon" href="./tools/favicon.svg" type="image/svg+xml">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="teru_luce">
-<meta property="og:title" content="teru_luce">
-<meta property="og:description" content="ディズニーの背景と物語を読み解くサイトの入口。">
+<meta property="og:site_name" content="Tools Personal / teru_luce">
+<meta property="og:title" content="teru_luce｜便利なWebツールと制作サイト">
+<meta property="og:description" content="URLクリーナー・QRコード・割り勘・学習タイマーなどのWebツールと、teru_luceが運営するサイトをご案内します。">
 <meta property="og:url" content="https://teruluce.github.io/">
 <meta property="og:locale" content="ja_JP">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "teru_luce",
-  "alternateName": "teru_luce_",
-  "url": "https://teruluce.github.io/"
-}
-</script>
-<style>
-  :root { --paper:#f4ecd8; --ink:#4a3526; --burgundy:#7a2e3a; --gold:#a8873d; }
-  * { box-sizing: border-box; }
-  body { margin:0; background:var(--paper); color:var(--ink);
-         font-family: "Hiragino Mincho ProN","Yu Mincho",Georgia,serif;
-         line-height:1.8; }
-  main { max-width:640px; margin:0 auto; padding:56px 20px 40px; text-align:center; }
-  h1 { font-size:2rem; letter-spacing:.08em; margin:0 0 4px; }
-  .sub { color:var(--gold); font-size:.85rem; letter-spacing:.2em; margin-bottom:32px; }
-  .lead { font-size:.95rem; margin-bottom:36px; }
-  .card { display:block; text-decoration:none; color:inherit; background:#fbf6e8;
-          border:1px solid var(--gold); padding:20px 18px; margin:0 0 16px; }
-  .card strong { display:block; color:var(--burgundy); font-size:1.15rem; letter-spacing:.04em; }
-  .card span { font-size:.88rem; }
-  .card:hover { background:#fff; }
-  h2 { margin: 36px 0 16px; font-size: 1.2rem; }
-  .card:focus-visible { outline: 3px solid var(--burgundy); outline-offset: 3px; }
-  footer { margin-top:40px; font-size:.8rem; }
-  footer a { color:var(--burgundy); }
-</style>
-</head>
-<body>
-<main>
-  <h1>teru_luce</h1>
-  <div class="sub">DISNEY · BACKGROUND &amp; STORY</div>
-  <p class="lead">ディズニーの背景や物語を掘り下げる、個人運営のサイトの入口です。</p>
-
-  <a class="card" href="https://teruluce.github.io/disney-bgs/">
-    <strong>BGS Chronicles</strong>
-    <span>東京ディズニーリゾートの背景設定・歴史・演出を読み解く資料集</span>
-  </a>
-
-  <a class="card" href="https://teruluce.github.io/disney-discovery/">
-    <strong>Disney Discovery</strong>
-    <span>ディズニーの新しい発見を紹介するサイト</span>
-  </a>
-
-  <section aria-labelledby="tools-title">
-    <h2 id="tools-title">便利なWebツール</h2>
-    <a class="card" href="./tools/"><strong>Tools Personal · ツール一覧</strong><span>日々の作業に使える、シンプルな個人制作のツール集</span></a>
-    <a class="card" href="./tools/url-cleaner/"><strong>URLクリーナー</strong><span>追跡パラメータを削除してリンクをコピー・共有</span></a>
-    <a class="card" href="./tools/duckmail/"><strong>Duckアドレス生成ツール</strong><span>自分のDuckアドレスからメールを送るための宛先を作成</span></a>
-    <a class="card" href="./tools/roulette/"><strong>ルーレット・グループ分け</strong><span>候補からランダムに選ぶ・メンバーをグループに分ける</span></a>
-  </section>
-  <footer>
-    <a href="https://www.instagram.com/teru_luce_">Instagram</a><br>
-    当サイトは個人が運営する非公式のファンサイトです。
-  </footer>
-</main>
-</body>
-</html>
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="teru_luce｜便利なWebツールと制作サイト">
+<meta name="twitter:description" content="URLクリーナー・QRコード・割り勘・学習タイマーなどのWebツールと、teru_luceが運営するサイトをご案内します。">
+<link rel="stylesheet" href="./tools/site.css">
+<style>body { padding:0; background:#f6f3ec; color:#2c4536; } .page { width:min(100% - 40px,520px); } main { background:transparent; border:0; border-radius:0; box-shadow:none; margin-top:0; } footer { text-align:left; } </style></head><body><div class="page"><div class="topbar"><a class="mark" href="./" aria-label="teru_luce ホーム">TL.</a><a href="./tools/">ツール一覧 →</a></div><main id="top"><div class="shapes" aria-hidden="true"><span class="c1"></span><span class="c2"></span><span class="c3"></span><span class="c4"></span></div><h1>teru_luce</h1><p class="jp">小さなツールと、好きなもの。</p><div class="hello"><p>日々のちょっとした作業に使えるWebツールを作っています。</p><p>ディズニーの背景や物語を読み解くサイトも運営しています。</p></div>
+<section class="home-tools" aria-labelledby="tools-title"><h2 id="tools-title" class="connect-label">便利なWebツール</h2><ul class="links"><li><a class="row" href="./tools/url-cleaner/"><span><span class="name">URLクリーナー</span><span class="note">追跡パラメータを削除してリンクをコピー・共有</span></span><span class="arrow" aria-hidden="true">→</span></a></li><li><a class="row" href="./tools/duckmail/"><span><span class="name">Duckアドレス生成</span><span class="note">自分のDuckアドレスから送るための宛先を作成</span></span><span class="arrow" aria-hidden="true">→</span></a></li><li><a class="row" href="./tools/roulette/"><span><span class="name">ルーレット・グループ分け</span><span class="note">候補からランダムに選ぶ・グループに分ける</span></span><span class="arrow" aria-hidden="true">→</span></a></li><li><a class="row" href="./tools/split/"><span><span class="name">割り勘計算</span><span class="note">合計金額と人数から、端数の扱いを選んで計算</span></span><span class="arrow" aria-hidden="true">→</span></a></li><li><a class="row" href="./tools/timer/"><span><span class="name">学習タイマー</span><span class="note">勉強と休憩を繰り返すポモドーロタイマー</span></span><span class="arrow" aria-hidden="true">→</span></a></li><li><a class="row" href="./tools/qr/"><span><span class="name">QRコード作成</span><span class="note">URLや文字からQRコードを作成・画像で保存</span></span><span class="arrow" aria-hidden="true">→</span></a></li><li><a class="row" href="./tools/constellation/"><span><span class="name">ことば星座</span><span class="note">好きな言葉から架空の星座を作成・共有</span></span><span class="arrow" aria-hidden="true">→</span></a></li><li><a class="row" href="./tools/rally/"><span><span class="name">ラリー</span><span class="note">羽根を落とさず続けるバドミントンゲーム</span></span><span class="arrow" aria-hidden="true">→</span></a></li></ul><a class="all-tools" href="./tools/">ツール一覧を見る →</a></section><section aria-labelledby="sites-title"><h2 id="sites-title" class="connect-label">運営サイト</h2><ul class="links"><li><a class="row" href="./disney-bgs/"><span><span class="name">BGS Chronicles</span><span class="note">東京ディズニーリゾートの背景設定・歴史・演出</span></span><span class="arrow" aria-hidden="true">→</span></a></li><li><a class="row" href="./disney-discovery/"><span><span class="name">Disney Discovery</span><span class="note">ディズニーの新しい発見を紹介</span></span><span class="arrow" aria-hidden="true">→</span></a></li></ul></section><section aria-labelledby="connect-title"><h2 id="connect-title" class="connect-label">つながる</h2><ul class="links"><li><a class="row" href="./aboutme/"><span><span class="name">About Me</span><span class="note">teru_luceのプロフィール</span></span><span class="arrow" aria-hidden="true">→</span></a></li><li><a class="row" href="https://www.instagram.com/teru_luce_/"><span><span class="name">Instagram</span><span class="note">最新の投稿はこちらから</span></span><span class="arrow" aria-hidden="true">→</span></a></li><li><a class="row" href="https://github.com/teruluce"><span><span class="name">GitHub</span><span class="note">制作したもの・ソースコード</span></span><span class="arrow" aria-hidden="true">→</span></a></li></ul></section></main><footer>© teru_luce · 個人制作のWebツール・非公式ファンサイト。各サービスの公式サイトではありません。</footer></div></body></html>

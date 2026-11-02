@@ -5,29 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="referrer" content="no-referrer">
   <meta http-equiv="Content-Security-Policy"
-        content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; connect-src 'none'; img-src 'none'; font-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
-  <meta name="theme-color" content="#F3F9FE">
-  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
-  <title>ルーレット・グループ分け｜Tools Personal</title>
-  <meta name="description" content="候補からランダムに選ぶルーレットと、メンバーを分けるグループ分けツール。入力内容は外部に送信しません。">
-  <link rel="canonical" href="https://teruluce.github.io/tools/roulette/">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Tools Personal">
-  <meta property="og:title" content="ルーレット・グループ分け｜Tools Personal">
-  <meta property="og:description" content="候補からランダムに選ぶルーレットと、メンバーを分けるグループ分けツール。">
-  <meta property="og:url" content="https://teruluce.github.io/tools/roulette/">
-  <meta name="twitter:card" content="summary">
+        content="default-src 'none'; script-src 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'none'; img-src 'self' blob:; font-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  
+  
+  
 
   <style>
     :root {
-      --bg: #F3F9FE;
-      --paper: #FFFFFF;
-      --ink: #20364A;
-      --muted: #53697B;
-      --green: #8ECDF5;
-      --green-dark: #2878B5;
-      --line: #D8E7F2;
-      --soft: #EAF6FF;
+      --bg: #f7f5ef;
+      --paper: #fffefa;
+      --ink: #333b33;
+      --muted: #73796f;
+      --green: #879982;
+      --green-dark: #526b54;
+      --line: #e5e4da;
+      --soft: #e8ede3;
       --error: #a34840;
       --radius: 22px;
     }
@@ -42,8 +34,8 @@
       padding: 36px 18px;
       color: var(--ink);
       background:
-        radial-gradient(circle at 8% 8%, #DDF1FF 0, #DDF1FF 95px, transparent 96px),
-        radial-gradient(circle at 94% 80%, #E7F5FF 0, #E7F5FF 125px, transparent 126px),
+        radial-gradient(circle at 8% 8%, #e4e9dc 0, #e4e9dc 95px, transparent 96px),
+        radial-gradient(circle at 94% 80%, #eee8dc 0, #eee8dc 125px, transparent 126px),
         var(--bg);
       font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN",
         "Yu Gothic", Meiryo, sans-serif;
@@ -124,7 +116,7 @@
       right: -25px;
       width: 180px;
       height: 180px;
-      border: 1px solid rgba(142, 205, 245, .65);
+      border: 1px solid rgba(135, 153, 130, .45);
       border-radius: 50%;
     }
 
@@ -132,7 +124,7 @@
     .decoration::after {
       position: absolute;
       content: "";
-      border: 1px solid rgba(142, 205, 245, .45);
+      border: 1px solid rgba(135, 153, 130, .35);
       border-radius: 50%;
     }
 
@@ -142,7 +134,7 @@
 
     .decoration::after {
       inset: 44px;
-      background: rgba(234, 246, 255, .75);
+      background: rgba(232, 237, 227, .5);
     }
 
     main {
@@ -151,7 +143,7 @@
       border: 1px solid var(--line);
       border-radius: var(--radius);
       background: var(--paper);
-      box-shadow: 0 12px 35px rgba(32, 54, 74, .06);
+      box-shadow: 0 12px 35px rgba(56, 62, 48, .04);
     }
 
     .section-title {
@@ -223,7 +215,7 @@
       width: 100%;
       min-height: 49px;
       padding: 12px 14px;
-      border: 1px solid #C9DCEB;
+      border: 1px solid #dcded4;
       border-radius: 12px;
       outline: none;
       background: #fff;
@@ -233,11 +225,11 @@
 
     input[type="text"]:focus {
       border-color: var(--green);
-      box-shadow: 0 0 0 3px rgba(142, 205, 245, .22);
+      box-shadow: 0 0 0 3px rgba(135, 153, 130, .16);
     }
 
     input[type="text"]::placeholder {
-      color: #71879A;
+      color: #a5a79e;
     }
 
     .add-row {
@@ -269,7 +261,7 @@
     }
 
     button:focus-visible {
-      outline: 3px solid rgba(40, 120, 181, .3);
+      outline: 3px solid rgba(82, 107, 84, .3);
       outline-offset: 3px;
     }
 
@@ -279,7 +271,7 @@
     }
 
     .primary:hover:not(:disabled) {
-      background: #1E6092;
+      background: #405943;
     }
 
     .secondary {
@@ -289,7 +281,7 @@
     }
 
     .secondary:hover:not(:disabled) {
-      background: #F1F8FD;
+      background: #f4f3ed;
     }
 
     #spin-button {
@@ -301,9 +293,9 @@
     .result {
       margin-top: 22px;
       padding: 20px;
-      border: 1px solid #C9E4F8;
+      border: 1px solid #dce4d6;
       border-radius: 16px;
-      background: #F1F8FD;
+      background: #f4f6f0;
       text-align: center;
     }
 
@@ -444,15 +436,6 @@
       font-size: 13px;
     }
 
-    .notice { margin-top: 20px; padding: 18px 20px; border: 1px solid var(--line); border-radius: 16px; background: #F1F8FD; color: var(--muted); font-size: 12px; }
-    .notice strong { display: block; margin-bottom: 6px; color: var(--ink); font-size: 14px; }
-    .notice ul { padding-left: 1.25em; }
-    .notice li { display: list-item; padding: 3px 0; border: 0; }
-    .notice li:first-child { border-top: 0; }
-    .notice p { margin: 8px 0 0; }
-    .developer { margin-top: 8px; }
-    .developer a { color: var(--green-dark); text-underline-offset: 2px; }
-
     footer {
       padding: 25px 8px 0;
       color: var(--muted);
@@ -505,11 +488,11 @@
     }
 
     .toolnav a:hover {
-      background: #F1F8FD;
+      background: #f4f3ed;
     }
 
     .toolnav a:focus-visible {
-      outline: 3px solid rgba(40, 120, 181, .3);
+      outline: 3px solid rgba(82, 107, 84, .3);
       outline-offset: 2px;
     }
 
@@ -572,7 +555,7 @@
       min-width: 0;
       min-height: 49px;
       padding: 12px 14px;
-      border: 1px solid #C9DCEB;
+      border: 1px solid #dcded4;
       border-radius: 12px;
       outline: none;
       background: #fff;
@@ -582,7 +565,7 @@
 
     .num:focus {
       border-color: var(--green);
-      box-shadow: 0 0 0 3px rgba(142, 205, 245, .22);
+      box-shadow: 0 0 0 3px rgba(135, 153, 130, .16);
     }
 
     .unit {
@@ -606,9 +589,9 @@
     .group-result {
       margin-top: 22px;
       padding: 20px;
-      border: 1px solid #C9E4F8;
+      border: 1px solid #dce4d6;
       border-radius: 16px;
-      background: #F1F8FD;
+      background: #f4f6f0;
     }
 
     .group-grid {
@@ -620,7 +603,7 @@
 
     .group-card {
       padding: 12px 14px;
-      border: 1px solid #C9E4F8;
+      border: 1px solid #dce4d6;
       border-radius: 14px;
       background: var(--paper);
       animation: pop .35s ease both;
@@ -678,160 +661,38 @@
       button, input { transition: none; }
       .group-card { animation: none; }
     }
-  
-    /* Tools Personal 共通デザイン */
-    :root {
-      color-scheme: light;
-      --bg: #F3F9FE;
-      --paper: #FFFFFF;
-      --surface: #FFFFFF;
-      --ink: #20364A;
-      --muted: #53697B;
-      --accent: #2878B5;
-      --accent-hover: #1E6092;
-      --green: #8ECDF5;
-      --green-dark: #2878B5;
-      --line: #D8E7F2;
-      --soft: #EAF6FF;
-      --focus: #8ECDF5;
-      --radius: 22px;
-    }
-    body {
-      background:
-        radial-gradient(circle at 8% 8%, #DDF1FF 0, #DDF1FF 95px, transparent 96px),
-        radial-gradient(circle at 94% 80%, #E7F5FF 0, #E7F5FF 125px, transparent 126px),
-        var(--bg);
-      color: var(--ink);
-      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
-      line-height: 1.7;
-    }
-    .page, .shell { width: 100%; max-width: 680px; margin-left: auto; margin-right: auto; }
-    .topline, .masthead {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 8px 14px;
-      margin: 0 0 20px;
-      color: var(--muted);
-      font-size: 12px;
-      letter-spacing: .06em;
-      text-transform: none;
-    }
-    .masthead a, .topline a { color: var(--accent); text-underline-offset: 3px; }
-    .dot, .masthead::before { background: var(--accent); }
-    header {
-      padding: clamp(24px, 5vw, 34px);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: rgba(255,255,255,.94);
-      box-shadow: 0 10px 28px rgba(32,54,74,.045);
-    }
-    .eyebrow { color: var(--accent); font-weight: 700; letter-spacing: .1em; }
-    h1 {
-      color: var(--ink);
-      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
-      font-size: clamp(1.8rem, 6vw, 2.55rem);
-      font-weight: 750;
-      letter-spacing: -.035em;
-      line-height: 1.25;
-    }
-    .intro { max-width: 52rem; color: var(--muted); font-size: .95rem; }
-    main, .guide {
-      margin-top: 16px;
-      padding: clamp(20px, 5vw, 28px);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: var(--paper);
-      box-shadow: 0 10px 28px rgba(32,54,74,.045);
-    }
-    h2, .section-title, .guide h2 { color: var(--ink); font-family: inherit; font-weight: 700; }
-    .section-description, .guide p, .guide li { color: var(--muted); }
-    .notice, .privacy {
-      margin-top: 14px;
-      padding: 18px 20px;
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      background: #EAF6FF;
-      color: var(--muted);
-    }
-    .notice h2, .privacy strong { color: var(--ink); }
-    footer {
-      padding: 22px 8px 0;
-      color: var(--muted);
-      font-size: .78rem;
-      text-align: center;
-    }
-    .developer a, footer a { color: var(--accent); text-underline-offset: 3px; }
-    button, input, textarea, select { font: inherit; }
-    button, .button-link {
-      min-height: 46px;
-      border-radius: 12px;
-      border-color: var(--line);
-      transition: background-color .18s ease, border-color .18s ease, transform .18s ease;
-    }
-    .primary, button.primary, .button-link.primary {
-      border-color: var(--accent);
-      background: var(--accent);
-      color: #fff;
-    }
-    .primary:hover:not(:disabled), .button-link.primary:hover { background: var(--accent-hover); }
-    .secondary:hover:not(:disabled), .button-link:hover { background: var(--soft); }
-    input, textarea, select {
-      border-color: #C9DCEB;
-      border-radius: 12px;
-      color: var(--ink);
-      background: #fff;
-    }
-    input:focus-visible, textarea:focus-visible, select:focus-visible,
-    button:focus-visible, a:focus-visible {
-      outline: 3px solid rgba(40,120,181,.28);
-      outline-offset: 3px;
-    }
-    .result, .group-result, .group-summary {
-      border-color: #C9E4F8;
-      border-radius: 16px;
-      background: var(--soft);
-    }
-    .result-label { color: var(--accent); }
-    .tool { border-radius: 14px; }
-    .tool:hover { background: var(--soft); }
-    .badge {
-      border-color: #C9DCEB;
-      background: var(--soft);
-      color: var(--accent);
-    }
-    .arrow, .developer a { color: var(--accent); }
-    @media (max-width: 480px) {
-      body { padding: 22px 13px; }
-      .topline, .masthead { margin-bottom: 16px; }
-      header { padding: 24px 20px; }
-      main, .guide { padding: 20px 17px; }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
-    }
-
   </style>
+<title>ルーレット・グループ分け｜Tools Personal</title>
+<meta name="description" content="候補からランダムに選ぶ・グループに分ける。ブラウザで使える無料のWebツールです。">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#f7f5ef">
+<link rel="canonical" href="https://teruluce.github.io/tools/roulette/">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Tools Personal / teru_luce">
+<meta property="og:title" content="ルーレット・グループ分け｜Tools Personal">
+<meta property="og:description" content="候補からランダムに選ぶ・グループに分ける。ブラウザで使える無料のWebツールです。">
+<meta property="og:url" content="https://teruluce.github.io/tools/roulette/">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ルーレット・グループ分け｜Tools Personal">
+<meta name="twitter:description" content="候補からランダムに選ぶ・グループに分ける。ブラウザで使える無料のWebツールです。">
+<link rel="stylesheet" href="../site.css">
 </head>
 
 <body>
   <div class="page">
     <div class="topline">
-      <span><span class="dot"></span>Personal tool</span>
+      <span><span class="dot"></span>Web tool</span>
       <span>Simple &amp; private</span>
     </div>
 
-    <nav class="toolnav" aria-label="ツール">
-      <a href="../">← Tools</a>
-      <a href="../duckmail/">Duckmail</a>
-      <a href="./" aria-current="page">Roulette</a>
-    </nav>
+    
 
-    <header>
+    <nav class="toolnav" aria-label="ツールナビゲーション"><a href="../../">ホーム</a><a href="../">ツール一覧</a><a href="../url-cleaner/">URLクリーナー</a><a href="../duckmail/">Duckアドレス生成</a><a href="../roulette/" aria-current="page">ルーレット・グループ分け</a><a href="../split/">割り勘計算</a><a href="../timer/">学習タイマー</a><a href="../qr/">QRコード作成</a><a href="../constellation/">ことば星座</a><a href="../rally/">ラリー</a></nav><header>
       <div class="decoration" aria-hidden="true"></div>
       <p class="eyebrow">A little utility</p>
-      <h1>Roulette<br>Personal.</h1>
+      <h1>ルーレット・グループ分け</h1>
       <p class="intro">
         項目を入力して回すルーレットと、メンバーをブロックに分けるグループ分けができます。
       </p>
@@ -936,7 +797,7 @@
       </div>
     </aside>
 
-    <aside class="notice" aria-labelledby="notice-title"><strong id="notice-title">ご利用上の注意</strong><ul><li>抽選結果は入力された候補からランダムに選ぶもので、公平性や結果の正しさを保証するものではありません。</li><li>グループ分けの結果は参考としてご利用ください。重要な選考・評価などには使用しないでください。</li><li>入力内容は本ツールから外部サーバーへ送信しない設計です。ただし端末・ブラウザ環境全体の安全性を保証するものではありません。</li><li>氏名などの個人情報や機密情報は入力しないでください。結果は利用前にご自身で確認してください。</li></ul><p>本ツールは個人制作の非公式ツールです。動作や結果について保証せず、利用により生じた損害について責任を負いかねます。</p></aside><footer>Tools Personal · 個人制作のWebツール<div class="developer">開発者：<a href="https://github.com/teruluce" rel="noopener noreferrer">teruluce</a> · <a href="https://github.com/teruluce/teruluce.github.io/tree/main/tools/roulette" rel="noopener noreferrer">ソースコード</a> · <a href="../">ツール一覧</a></div></footer>
+    <section class="guide"><h2>使い方</h2><p>候補を追加して「回す」を押すと1つを選びます。「グループ分け」では人数とブロック数を設定してメンバーを分け、結果をコピーできます。候補や結果はページを閉じると失われます。</p></section><aside class="notice"><h2>ご利用にあたって</h2><p>本ツールは個人制作です。結果の正確性・完全性や継続的な動作を保証しません。重要な用途では結果をご確認ください。</p></aside><footer>Tools Personal · 個人制作のWebツール集<div>開発者：<a href="https://github.com/teruluce">teruluce</a> · <a href="https://github.com/teruluce/teruluce.github.io/tree/main/tools/roulette">ソースコード</a> · <a href="../../">ホーム</a></div></footer>
   </div>
 
   <script>
@@ -944,14 +805,14 @@
 
     const MAX_ITEMS = 20;
     const COLORS = [
-      { bg: "#8ECDF5", dark: true },
-      { bg: "#EAF6FF", dark: false },
-      { bg: "#2878B5", dark: true },
-      { bg: "#E7F5FF", dark: false },
-      { bg: "#B9E3FB", dark: false },
-      { bg: "#D7EEFC", dark: false },
-      { bg: "#5CA5D8", dark: true },
-      { bg: "#CBE8FA", dark: false }
+      { bg: "#879982", dark: true },
+      { bg: "#e8ede3", dark: false },
+      { bg: "#526b54", dark: true },
+      { bg: "#eee8dc", dark: false },
+      { bg: "#a9b8a1", dark: false },
+      { bg: "#c9bfa5", dark: false },
+      { bg: "#6f8670", dark: true },
+      { bg: "#dde4d5", dark: false }
     ];
 
     let items = ["ラーメン", "カレー", "寿司", "パスタ"];
@@ -995,9 +856,9 @@
       if (n === 0) {
         ctx.beginPath();
         ctx.arc(c, c, r, 0, Math.PI * 2);
-        ctx.fillStyle = "#EAF6FF";
+        ctx.fillStyle = "#e8ede3";
         ctx.fill();
-        ctx.fillStyle = "#53697B";
+        ctx.fillStyle = "#73796f";
         ctx.font = "30px sans-serif";
         ctx.textAlign = "center";
         ctx.textBaseline = "middle";
@@ -1018,14 +879,14 @@
         ctx.closePath();
         ctx.fillStyle = color.bg;
         ctx.fill();
-        ctx.strokeStyle = "#FFFFFF";
+        ctx.strokeStyle = "#fffefa";
         ctx.lineWidth = 3;
         ctx.stroke();
 
         ctx.save();
         ctx.translate(c, c);
         ctx.rotate(a0 + step / 2);
-        ctx.fillStyle = color.dark ? "#ffffff" : "#20364A";
+        ctx.fillStyle = color.dark ? "#ffffff" : "#333b33";
         ctx.textAlign = "right";
         ctx.textBaseline = "middle";
         const fontSize = Math.max(18, Math.min(34, Math.floor(r * step * 0.32)));

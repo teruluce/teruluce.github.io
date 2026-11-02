@@ -34,3 +34,16 @@
 - **Claudeとの連携:** Claudeによるレビューは未実施・未確認。PR #6の差分をレビュー対象にできる。
 - **次の作業:** PR #6の差分を確認し、問題がなければマージ。マージ後に公開ページをPC／スマートフォンで確認し、必要なら見た目を微調整する。
 
+## 2026-11-02 — ChatGPT：公開用URLクリーナーを追加
+
+- **作業AI:** ChatGPT
+- **対象サイト:** https://teruluce.github.io/tools/url-cleaner/
+- **対象ファイル:** `tools/index.html`、`tools/sitemap.xml`、`tools/url-cleaner/{index.html,cleaner.mjs,app.mjs,cleaner.test.mjs,README.md}`、本ログ。
+- **依頼:** yuuki側と同じURLクリーナーを、てる側の公開用ツールとして追加し、SEOも整備する。
+- **変更内容:** 既知の追跡パラメータをブラウザ内で自動削除し、コピー・共有・削除項目と件数を表示。未知のクエリ、生のエンコード・順序・重複、パス・フラグメント、既知の署名付きURLを保持。既存の水色・白・ネイビーのデザインに統合し一覧に追加。
+- **SEO:** 日本語タイトル・description・canonical・OGP・Twitterカード・index/follow・使い方と説明本文・toolsサイトマップを追加。既存robots.txtのAllowとルートサイトマップからtoolsサイトマップへの参照を確認済み。検索エンジンへの登録・順位を保証するものではない。
+- **プライバシー:** URL送信・履歴保存・短縮URLの展開なし。Web Share TargetはiOS/iPadOSの受信対応とブラウザ内処理の要件を考慮して未実装。
+- **ブランチ:** `codex/add-url-cleaner`
+- **公開状態:** PR作成用の変更。未マージ・未公開。
+- **検証結果:** Node.jsの処理テスト6件成功。Chromiumで375/768/1440px幅、横はみ出しなし、自動処理、コピー、共有API呼び出し（モック）、不正URL、クリア、一覧からの導線、JSエラーなしを確認。SEOメタ情報、canonical、h1が1個、サイトマップを確認。
+- **未検証・制約:** iPhone/iPad実機のネイティブ共有とLINE送信、公開後のクロール・インデックスは未確認。未知の署名方式やすべてのサイトの動作は保証できない。Claudeレビューは未実施。
